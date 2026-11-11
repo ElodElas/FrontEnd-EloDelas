@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FBF5F6;
+}
+
+.pag-confirmar-codigo {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.logo-completa {
+    width: 47%;
+    height: 100vh;
+    flex-shrink: 0;
+}
+
+.logo-completa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.dados-pagina {
+    width: 53%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 50px;
+}
+
+.topo {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.frase-topo {
+    color: #963A69;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.frase-topo span {
+    color: #A21D5A;
+    margin: 0 8px;
+}
+
+.topo h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 500;
+    color: #963A69;
+    margin-bottom: 22px;
+}
+
+.texto-topo {
+    font-size: 14px;
+    color: #963A69;
+}
+
+.formulario-codigo {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icone-email {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5EAF7;
+    border-radius: 50%;
+    color: #735C8C;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.campos-codigo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.campos-codigo input {
+    width: 45px;
+    height: 55px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    background-color: #F2C9E5;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #963A69;
+}
+
+.campos-codigo input::placeholder {
+    color: #735C8C;
+    opacity: 1;
+}
+
+.campos-codigo input:focus {
+    border: 1px solid #963A69;
+    background-color: #F8DDEC;
+}
+
+.botao-confirmar {
+    width: 100%;
+    max-width: 450px;
+    margin-top: 20px;
+}
+
+.botao-codigo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 55px;
+    border: none;
+    border-radius: 10px;
+    background-color: #963A69;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.botao-codigo:hover {
+    background-color: #7F2855;
+}
+
+.voltar-login {
+    margin-top: 25px;
+}
+
+.voltar-login a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #272727;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.voltar-login i {
+    color: #963A69;
+    font-size: 13px;
+}
+
+.voltar-login a:hover {
+    color: #963A69;
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+
+    .pag-confirmar-codigo {
+        flex-direction: column;
+    }
+
+    .logo-completa {
+        width: 100%;
+        min-height: auto;
+        height: 220px;
+    }
+
+    .logo-completa img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .dados-pagina {
+        width: 100%;
+        min-height: auto;
+        flex: 1;
+        padding: 40px 20px;
+    }
+
+    .campos-codigo {
+        gap: 7px;
+    }
+
+    .campos-codigo input {
+        width: 42px;
+        height: 50px;
+    }
+
+}

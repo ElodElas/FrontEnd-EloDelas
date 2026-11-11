@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    background: #fbf5f6;
+    color: #272727;
+    font-family: 'Poppins', sans-serif;
+}
+
+.pag-cadastro {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.logo-completa {
+    width: 47%;
+    min-height: 100vh;
+    flex-shrink: 0;
+}
+
+.logo-completa img {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.dados-pagina {
+    width: 53%;
+    min-height: 100vh;
+    padding: 36px 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dados-pagina h1 {
+    margin-bottom: 18px;
+    color: #963a69;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.formulario-cadastro {
+    width: 100%;
+    max-width: 430px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.campo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 44px;
+    padding: 0 16px;
+    border: 1px solid #ce8eaa;
+    border-radius: 9px;
+    color: #272727;
+}
+
+.campo > i:first-child {
+    width: 18px;
+    flex: 0 0 18px;
+    font-size: 15px;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    height: 100%;
+    padding: 0 0 0 28px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #963a69;
+    font: 400 14px 'Poppins', sans-serif;
+}
+
+.campo input::placeholder,
+.campo select:invalid {
+    color: #963a69;
+    opacity: 1;
+}
+
+.campo select {
+    appearance: none;
+    cursor: pointer;
+}
+
+.campo select option {
+    color: #272727;
+}
+
+.campo .seta-select {
+    position: absolute;
+    right: 15px;
+    pointer-events: none;
+    color: #272727;
+    font-size: 12px;
+}
+
+.alternar-senha {
+    display: grid;
+    place-items: center;
+    border: 0;
+    background: transparent;
+    color: #735c69;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.anexar-arquivo {
+    position: relative;
+    min-height: 68px;
+    margin: 3px 5px 0;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 8px;
+    background: #f2d8e9;
+    color: #272727;
+    cursor: pointer;
+}
+
+.anexar-arquivo > i {
+    color: #171217;
+    font-size: 30px;
+}
+
+.anexar-arquivo span {
+    font-size: 11px;
+    line-height: 1.45;
+    text-align: center;
+}
+
+.anexar-arquivo input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.aceite-termos {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: -2px 5px 0;
+    font-size: 11px;
+}
+
+.aceite-termos input {
+    width: 16px;
+    height: 16px;
+    accent-color: #963a69;
+}
+
+.aceite-termos a,
+.possui-conta a {
+    color: #963a69;
+    text-decoration: none;
+}
+
+.aceite-termos a:hover,
+.possui-conta a:hover {
+    text-decoration: underline;
+}
+
+.botao-cadastrar {
+    width: 100%;
+    height: 44px;
+    border: 0;
+    border-radius: 9px;
+    background: #963a69;
+    color: #fff;
+    font: 700 16px 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+.botao-cadastrar:hover {
+    background: #7f2855;
+}
+
+.possui-conta {
+    margin-top: 14px;
+    font-size: 11px;
+    text-align: center;
+}
+
+.possui-conta a {
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+@media (max-width: 700px) {
+    .pag-cadastro {
+        flex-direction: column;
+    }
+
+    .logo-completa {
+        width: 100%;
+        min-height: 0;
+        height: 220px;
+    }
+
+    .logo-completa img {
+        height: 220px;
+        object-position: center 42%;
+    }
+
+    .dados-pagina {
+        width: 100%;
+        min-height: auto;
+        padding: 32px 22px 40px;
+    }
+
+    .dados-pagina h1 {
+        max-width: 360px;
+        font-size: 19px;
+    }
+}
+
+@media (max-height: 650px) and (min-width: 701px) {
+    .dados-pagina {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .formulario-cadastro {
+        gap: 8px;
+    }
+
+    .campo {
+        height: 40px;
+    }
+
+    .anexar-arquivo {
+        min-height: 58px;
+    }
+
+    .possui-conta {
+        margin-top: 10px;
+    }
+}

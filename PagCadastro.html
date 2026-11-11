@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Elo d'Elas</title>
+
+    <link rel="stylesheet" href="css/PagCadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <main class="pag-cadastro">
+        <section class="logo-completa" aria-label="Elo d'Elas">
+            <img src="img/LogoLogin.png" alt="Elo d'Elas. Juntas, somos mais fortes.">
+        </section>
+
+        <section class="dados-pagina">
+            <h1>Cadastre-se e faça parte dessa comunidade</h1>
+
+            <form class="formulario-cadastro" action="#" method="post" enctype="multipart/form-data">
+                <label class="campo campo-nome">
+                    <i class="fa-regular fa-user" aria-hidden="true"></i>
+                    <input type="text" name="nome" placeholder="Nome" autocomplete="name" required>
+                </label>
+
+                <label class="campo campo-email">
+                    <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                    <input type="email" name="email" placeholder="E-mail" autocomplete="email" required>
+                </label>
+
+                <label class="campo campo-telefone">
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                    <input type="tel" name="telefone" placeholder="Telefone" autocomplete="tel" required>
+                </label>
+
+                <label class="campo campo-profissao">
+                    <i class="fa-solid fa-address-card" aria-hidden="true"></i>
+                    <select name="profissao" aria-label="Profissão" required>
+                        <option value="" disabled selected>Profissão</option>
+                        <option value="empreendedora">Empreendedora</option>
+                        <option value="estudante">Estudante</option>
+                        <option value="profissional">Profissional</option>
+                        <option value="outra">Outra</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down seta-select" aria-hidden="true"></i>
+                </label>
+
+                <label class="campo campo-senha">
+                    <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                    <input type="password" name="senha" placeholder="Senha" autocomplete="new-password" required>
+                    <button class="alternar-senha" type="button" aria-label="Mostrar senha">
+                        <i class="fa-regular fa-eye-slash" aria-hidden="true"></i>
+                    </button>
+                </label>
+
+                <label class="campo campo-senha">
+                    <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                    <input type="password" name="confirmar-senha" placeholder="Confirmar Senha" autocomplete="new-password" required>
+                    <button class="alternar-senha" type="button" aria-label="Mostrar senha">
+                        <i class="fa-regular fa-eye-slash" aria-hidden="true"></i>
+                    </button>
+                </label>
+
+                <label class="anexar-arquivo" for="curriculo">
+                    <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+                    <span>Anexe seu diploma e/ou seu currículo<br>para impulsionar seu perfil!</span>
+                    <input id="curriculo" type="file" name="curriculo" accept=".pdf,.doc,.docx">
+                </label>
+
+                <label class="aceite-termos">
+                    <input type="checkbox" name="termos" required>
+                    <span>Aceito os <a href="#termos">termos de política e privacidade</a></span>
+                </label>
+
+                <button class="botao-cadastrar" type="submit">Cadastre-se</button>
+            </form>
+
+            <p class="possui-conta">Já faz parte dessa comunidade? <a href="PagLogin.html">Faça Login</a></p>
+        </section>
+    </main>
+</body>
+
+</html>

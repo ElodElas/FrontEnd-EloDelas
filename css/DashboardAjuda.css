@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    background: #fff;
+    color: #171217;
+    font-family: 'Poppins', sans-serif;
+}
+
+.dashboard-ajuda {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.barra-lateral {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex: 0 0 clamp(165px, 22vw, 280px);
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 28px 20px 24px;
+    background: #963a69;
+    color: #fff;
+}
+
+.marca {
+    display: flex;
+    width: 100%;
+    height: 82px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.marca img {
+    display: block;
+    width: min(112px, 100%);
+    height: auto;
+    object-fit: contain;
+}
+
+.navegacao {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-navegacao {
+    display: flex;
+    min-height: 34px;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.25;
+    text-decoration: none;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.item-navegacao i {
+    width: 14px;
+    flex: 0 0 14px;
+    text-align: center;
+}
+
+.item-navegacao:hover,
+.item-navegacao.ativo {
+    background: #f2cde2;
+    color: #20151d;
+}
+
+.recado {
+    margin-top: auto;
+    margin-bottom: 28px;
+    padding: 16px 14px;
+    border-radius: 7px;
+    background: #f2cde2;
+    color: #171217;
+}
+
+.recado h1 {
+    margin-bottom: 14px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.recado p {
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.avatar {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    place-items: center;
+    border-radius: 50%;
+    background: #d9b9e8;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.dados-usuario {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.dados-usuario strong {
+    font-weight: 500;
+}
+
+.dados-usuario small {
+    font-size: 10px;
+}
+
+.conteudo {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #fff;
+}
+
+.ramo {
+    position: absolute;
+    display: block;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.ramo-superior {
+    top: -35px;
+    right: -35px;
+    width: 650px;
+    height: 650px;
+}
+
+.ramo-inferior {
+    bottom: -135px;
+    left: -24px;
+    width: 600px;
+    height: 600px;
+}
+
+@media (max-width: 600px) {
+    .dashboard-ajuda {
+        flex-direction: column;
+        overflow: auto;
+    }
+
+    .barra-lateral {
+        min-height: auto;
+        flex: 0 0 auto;
+        padding: 14px 16px;
+    }
+
+    .marca {
+        width: 120px;
+        height: 48px;
+        margin: 0 auto 12px;
+    }
+
+    .navegacao {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4px;
+    }
+
+    .item-navegacao {
+        min-height: 36px;
+        padding: 6px 8px;
+        font-size: 11px;
+    }
+
+    .recado,
+    .usuario {
+        display: none;
+    }
+
+    .conteudo {
+        min-height: 55vh;
+    }
+
+    .ramo-superior {
+        top: -42px;
+        right: -55px;
+        width: 380px;
+        height: 380px;
+    }
+
+    .ramo-inferior {
+        bottom: -105px;
+        left: -50px;
+        width: 340px;
+        height: 340px;
+    }
+}
