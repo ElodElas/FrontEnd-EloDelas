@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    list-style: none;
+}
+
+:root {
+    --c0: #000000;
+    --c1: #FFFFFF;
+    --c2: #FCE7EC;
+    --c3: #765C80;
+    --c4: #963F5D;
+    --c5: #903963;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
