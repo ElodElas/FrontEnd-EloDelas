@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
     <header>
         <a href="#">
@@ -27,7 +29,7 @@
                 <li><a href="./SobrePage.html">Sobre Nós</a></li>
                 <li><a href="./RecursosPage.html">Recursos</a></li>
             </ul>
-            
+
             <div class="btns-nav">
                 <button class="btn-nav singup-btn" onclick="window.location.href='./PagCadastro.html'">Cadastre-se</button>
                 <button class="btn-nav login-btn" onclick="window.location.href='./PagLogin.html'">Login</button>
@@ -37,17 +39,64 @@
 
     <main>
         <section class="hero-section">
+            <h1>Mais que um site, é uma rede de apoio.</h1>
 
-        </section>
-        <section class="about-section">
+            <div class="btns-hero">
+                <button class="btn-recurs pink left">Orientações de Segurança</button>
+                <button class="btn-recurs purple right">Vagas de Emprego</button>
+                <button class="btn-recurs purple left">Mapa de Serviços de Apoio</button>
+                <button class="btn-recurs pink right" onclick="document.location='DashboardAjuda'">Cuidados
+                    Pessoais</button>
+            </div>
 
+            <div class="arrow-down">
+                <a href="#about">
+                    <i class="fa-solid fa-angles-down"></i>
+                </a>
+            </div>
         </section>
+
+        <button onclick="goTop()" id="btn-top" title="Voltar ao Topo">
+            <i class="fa-solid fa-angles-up"></i>
+        </button>
+
+        <section class="about-section" id="about">
+            <div class="title">
+                <h1>Quem é o</h1>
+                <img src="./img/HomePage/LogoLetters.png" alt="Logo Letras Elo d'Elas">
+            </div>
+
+            <div class="carousel-container">
+                <div class="card" id="card1">
+                    <h2>O que é?</h2>
+                    <p>O Elo d'Elas é uma plataforma digital que conecta mulheres a oportunidades e recursos de apoio
+                        que contribuam para seu desenvolvimento pessoal e profissional.</p>
+                </div>
+
+                <div class="card" id="card2">
+                    <h2>Propósito</h2>
+                    <p>O Elo D'Elas nasceu para fortalecer a autonomia feminina, aproximando mulheres de conhecimentos,
+                        oportunidades e novas possibilidades.</p>
+                </div>
+
+                <div class="card" data-index="card3">
+                    <h2>Evoluir</h2>
+                    <p>Acreditamos que a união, a colaboração e a troca de experiências são essenciais para o
+                        crescimento e fortalecimento de cada mulher.</p>
+                </div>
+            </div>
+        </section>
+
         <section class="more-section">
 
         </section>
+
         <section class="contributor-section">
 
         </section>
     </main>
+
+    <script src="./js/script.js"></script>
 </body>
+
 </html>

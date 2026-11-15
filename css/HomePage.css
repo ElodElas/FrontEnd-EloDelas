@@ -13,6 +13,9 @@
     --c3: #765C80;
     --c4: #963F5D;
     --c5: #903963;
+    --c6: #F0C4DF;
+    --c7: #D7C3F1;
+    --c8: #E2CEF0;
 }
 
 html {
@@ -21,5 +24,221 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    & h1 {
+        font-family: 'Playfair Display', sans-serif;
+        color: var(--c5);
+    }
+
+    & .hero-section {
+        flex: 1 0 auto;
+        min-height: calc(100vh - 107px);
+        background-color: var(--c2);
+        background-image: url('../img/HomePage/ColagemMulheres.png');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+
+        & h1 {
+            margin-top: 42px;
+            font-size: 50px;
+            width: 30rem;
+        }
+
+        & .btns-hero {
+            margin-top: 90px;
+            width: clamp(20rem, 35vw, 30rem);
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+
+            & .btn-recurs {
+                font-family: 'Poppins', sans-serif;
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--c5);
+                padding: 12px 18px;
+                border: none;
+                border-radius: 15px;
+                cursor: pointer;
+                transition: .3s ease-in;
+                transform: translateX(var(--x, 0));
+
+                &:hover {
+                    background-color: var(--c4);
+                    color: var(--c2);
+                }
+            }
+
+            & .btn-recurs:nth-child(1) {
+                --x: -1rem;
+            }
+
+            & .btn-recurs:nth-child(2) {
+                --x: -2rem;
+            }
+
+            & .btn-recurs:nth-child(3) {
+                --x: -2rem;
+            }
+
+            & .btn-recurs:nth-child(4) {
+                --x: -1rem;
+            }
+
+            & .pink {
+                background-color: var(--c6);
+            }
+
+            & .purple {
+                background-color: var(--c7);
+            }
+
+            & .left {
+                align-self: flex-end;
+            }
+
+            & .right {
+                align-self: flex-start;
+            }
+        }
+
+        & .arrow-down {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+
+            & a {
+                font-size: 40px;
+                color: var(--c4);
+                text-decoration: none;
+                display: flex;
+                animation: jump 1s linear infinite;
+                transition: .3s ease-in;
+
+                &:hover {
+                    color: var(--c3);
+                    animation: paused;
+                }
+            }
+        }
+
+    }
+
+    & #btn-top {
+        display: none;
+        padding: 10px;
+        font-size: 30px;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        background-color: var(--c4);
+        color: var(--c1);
+        cursor: pointer;
+        transition: transform .3s ease-in;
+
+        &:hover {
+            background-color: var(--c5);
+            transform: translateY(-4px);
+        }
+    }
+
+    & .about-section {
+        flex: 1 0 auto;
+        min-height: calc(100vh - 107px);
+        background-color: var(--c8);
+
+        & .title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 60px;
+
+            & h1 {
+                font-size: 45px;
+            }
+
+            & img {
+                height: 100px;
+            }
+        }
+
+        & .carousel-container {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            min-height: 450px;
+            perspective: 1000px;
+            overflow: hidden;
+            margin-top: 44px;
+
+            & .card {
+                width: 27rem;
+                padding: 69px 59px;
+                border-radius: 20px;
+                border: 8px solid var(--c1);
+                background-color: var(--c4);
+                color: var(--c1);
+                font-family: 'Raleway', sans-serif;
+                position: absolute;
+                top: 0;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                transition: transform .4s;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+                & h2 {
+                    font-size: 36px;
+                }
+
+                & p {
+                    font-size: 24px;
+                }
+            }
+
+        }
+
+        & #card1
+        #card2
+        #card3 {
+            transform: translate3d(600px, 0, -180px) rotateY(-25deg);
+            z-index: 2;
+        }
+    }
+}
+
+@keyframes jump {
+    from {
+        transform: translateY(-1rem);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-1rem);
+    }
+}
