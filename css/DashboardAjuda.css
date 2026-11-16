@@ -5,45 +5,52 @@
 }
 
 body {
-    min-width: 320px;
-    min-height: 100vh;
-    background: #fff;
-    color: #171217;
     font-family: 'Poppins', sans-serif;
+    background-color: #FBF5F6;
+    color: #40183B;
 }
 
-.dashboard-ajuda {
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.dashboardAjuda {
     display: flex;
-    min-height: 100vh;
     width: 100%;
+    min-height: 100vh;
     overflow: hidden;
 }
 
-.barra-lateral {
-    position: relative;
-    z-index: 1;
+.barraLateral {
     display: flex;
-    flex: 0 0 clamp(165px, 22vw, 280px);
-    min-height: 100vh;
     flex-direction: column;
-    padding: 28px 20px 24px;
-    background: #963a69;
-    color: #fff;
+    align-items: center;
+    width: 22%;
+    min-width: 190px;
+    max-width: 300px;
+    min-height: 100vh;
+    padding: 35px 25px 25px;
+    background-color: #963F6D;
+    color: white;
+    flex-shrink: 0;
 }
 
 .marca {
     display: flex;
-    width: 100%;
-    height: 82px;
-    margin-bottom: 24px;
-    overflow: hidden;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    margin-bottom: 35px;
 }
 
 .marca img {
-    display: block;
-    width: min(112px, 100%);
+    width: 135px;
     height: auto;
     object-fit: contain;
 }
@@ -51,92 +58,85 @@ body {
 .navegacao {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
+    width: 100%;
 }
 
-.item-navegacao {
+.itemNavegacao {
     display: flex;
-    min-height: 34px;
     align-items: center;
     gap: 10px;
-    padding: 7px 10px;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 12px;
+    width: 100%;
+    padding: 9px 10px;
+    border-radius: 6px;
+    font-size: 11px;
     font-weight: 500;
-    line-height: 1.25;
-    text-decoration: none;
-    transition: background-color .2s ease, color .2s ease;
+    transition: 0.2s;
 }
 
-.item-navegacao i {
+.itemNavegacao i {
     width: 14px;
-    flex: 0 0 14px;
     text-align: center;
 }
 
-.item-navegacao:hover,
-.item-navegacao.ativo {
-    background: #f2cde2;
-    color: #20151d;
+.itemNavegacao:hover,
+.itemNavegacao.ativo {
+    background-color: #F3D1E6;
+    color: #40183B;
 }
 
 .recado {
+    width: 100%;
     margin-top: auto;
-    margin-bottom: 28px;
-    padding: 16px 14px;
+    margin-bottom: 22px;
+    padding: 15px;
+    background-color: #F3D1E6;
+    color: #40183B;
     border-radius: 7px;
-    background: #f2cde2;
-    color: #171217;
 }
 
-.recado h1 {
-    margin-bottom: 14px;
-    font-size: 12px;
-    font-weight: 700;
-    text-align: center;
+.recado h2 {
+    font-size: 10px;
+    margin-bottom: 18px;
 }
 
 .recado p {
-    font-size: 11px;
-    line-height: 1.5;
+    font-size: 9px;
+    line-height: 1.6;
 }
 
 .usuario {
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: #fff;
-    text-decoration: none;
+    gap: 9px;
+    width: 100%;
 }
 
 .avatar {
-    display: grid;
-    width: 34px;
-    height: 34px;
-    flex: 0 0 34px;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 27px;
+    height: 27px;
     border-radius: 50%;
-    background: #d9b9e8;
-    color: #fff;
-    font-size: 15px;
+    background-color: #D8B8EA;
+    color: white;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.dadosUsuario {
+    display: flex;
+    flex-direction: column;
+}
+
+.dadosUsuario strong {
+    font-size: 10px;
     font-weight: 600;
 }
 
-.dados-usuario {
-    display: flex;
-    min-width: 0;
-    flex-direction: column;
-    font-size: 11px;
-    line-height: 1.4;
-}
-
-.dados-usuario strong {
-    font-weight: 500;
-}
-
-.dados-usuario small {
-    font-size: 10px;
+.dadosUsuario small {
+    font-size: 8px;
 }
 
 .conteudo {
@@ -144,59 +144,640 @@ body {
     flex: 1;
     min-width: 0;
     min-height: 100vh;
+    padding: 40px 25px 25px;
     overflow: hidden;
-    background: #fff;
+    background-color: #FFFFFF;
 }
 
 .ramo {
     position: absolute;
-    display: block;
-    object-fit: contain;
+    z-index: 0;
+    width: 180px;
     pointer-events: none;
 }
 
-.ramo-superior {
-    top: -35px;
-    right: -35px;
-    width: 650px;
-    height: 650px;
+.ramoSuperior {
+    top: 0;
+    right: 0;
 }
 
-.ramo-inferior {
-    bottom: -135px;
-    left: -24px;
-    width: 600px;
-    height: 600px;
+.ramoInferior {
+    bottom: 0;
+    left: 0;
 }
 
-@media (max-width: 600px) {
-    .dashboard-ajuda {
-        flex-direction: column;
-        overflow: auto;
+.cabecalhoConteudo {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.saudacaoUsuario {
+    flex-shrink: 0;
+}
+
+.saudacaoUsuario h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #40183B;
+}
+
+.saudacaoUsuario p {
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.filtragem {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 9px;
+    flex: 1;
+    min-width: 0;
+}
+
+.filtro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 8px 13px;
+    border-radius: 20px;
+    background-color: #F6D2E8;
+    color: #54204E;
+    font-size: 9px;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+.filtro i {
+    font-size: 10px;
+}
+
+.filtro:hover,
+.filtro.ativo {
+    background-color: #963F6D;
+    color: white;
+}
+
+.gradeCards {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+    gap: 16px 20px;
+    width: 100%;
+    align-items: start;
+}
+
+.cardDestaqueDia,
+.cardUltimaPesquisa,
+.cardRecente,
+.cardAcessoComunidade,
+.cardTutoriaisNaoFinalizados,
+.cardTutoriaisFavoritos,
+.cardTutoriaisFinalizados,
+.cardAlertaBemEstar {
+
+    min-width: 0;
+    padding: 16px;
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.10);
+}
+
+.cardDestaqueDia,
+.cardUltimaPesquisa,
+.cardAcessoComunidade,
+.cardTutoriaisNaoFinalizados,
+.cardTutoriaisFinalizados {
+    background-color: #F5D0E7;
+}
+
+.cardRecente,
+.cardTutoriaisFavoritos,
+.cardAlertaBemEstar {
+    background-color: #E4C9EC;
+}
+
+.cardCabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.cardCabecalho h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #54204E;
+}
+
+.cardCabecalho h2 i {
+    font-size: 13px;
+}
+
+.cardConteudo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.cardConteudo img {
+    width: 90px;
+    height: 80px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.cardInformacoes {
+    flex: 1;
+    min-width: 0;
+}
+
+.cardInformacoes h3 {
+    margin-bottom: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.cardInformacoes p {
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.cardRodape {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.botaoCard {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 8px 13px;
+    border-radius: 20px;
+    background-color: #963F6D;
+    color: white;
+    font-size: 10px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+.botaoCard:hover {
+    background-color: #702C50;
+}
+
+.botaoCard i {
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.avaliacao {
+    color: #963F6D;
+
+    font-size: 16px;
+    letter-spacing: 1.2px;
+
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.botaoIcone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    background: transparent;
+
+    color: #54204E;
+    font-size: 17px;
+}
+
+.linkCard {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #54204E;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.linkCard i {
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.cardDestaqueDia {
+    grid-column: span 5;
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardDestaqueDia .cardCabecalho {
+    margin-bottom: 12px;
+}
+
+.cardDestaqueDia .cardConteudo {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr);
+    align-items: start;
+    gap: 14px;
+}
+
+.cardDestaqueDia .cardConteudo img {
+    width: 110px;
+    height: 100px;
+}
+
+.cardDestaqueDia .cardInformacoes h3 {
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.cardDestaqueDia .cardInformacoes p {
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.cardDestaqueDia .cardRodape {
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+.cardUltimaPesquisa {
+    grid-column: span 3;
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardUltimaPesquisa .cardCabecalho {
+    margin-bottom: 8px;
+}
+
+.dataPesquisa {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 10px;
+    color: #963F6D;
+}
+
+.cardUltimaPesquisa .cardConteudo {
+    flex: 1;
+    align-items: flex-start;
+}
+
+.cardUltimaPesquisa .cardConteudo img {
+    width: 85px;
+    height: 75px;
+}
+
+.cardUltimaPesquisa .cardRodape {
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+.cardRecente {
+    grid-column: span 3;
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardRecente .cardCabecalho {
+    margin-bottom: 0;
+}
+
+.cardRecente .cardConteudo {
+    flex: 1;
+    align-items: flex-start;
+    margin-top: 16px;
+}
+
+.cardRecente .cardConteudo img {
+    width: 85px;
+    height: 75px;
+}
+
+.cardRecente .cardRodape {
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+.cardAcessoComunidade {
+    grid-column: span 5;
+    height: 185px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cardAcessoComunidade .cardCabecalho {
+    margin-bottom: 0;
+}
+
+.listaAvatares {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 12px 0;
+}
+
+.listaAvatares span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #D9A8C9;
+    color: #71345E;
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.cardAcessoComunidade p {
+    margin-bottom: 8px;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.cardAcessoComunidade .botaoCard {
+    align-self: flex-start;
+}
+
+.cardTutoriaisNaoFinalizados {
+    grid-column: span 6;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardTutoriaisNaoFinalizados .cardCabecalho {
+    margin-bottom: 8px;
+}
+
+.cardTutoriaisNaoFinalizados .cardConteudo {
+    flex: 1;
+    align-items: center;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.cardTutoriaisNaoFinalizados .cardConteudo img {
+    width: 105px;
+    height: 85px;
+}
+
+.cardTutoriaisNaoFinalizados .cardInformacoes h3 {
+    font-size: 12px;
+}
+
+.cardTutoriaisNaoFinalizados .botaoCard {
+    margin-left: auto;
+}
+
+.grupoResumo {
+    grid-column: span 5;
+
+    width: 80%;
+    justify-self: center;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.grupoResumo .cardTutoriaisFavoritos,
+.grupoResumo .cardTutoriaisFinalizados {
+    grid-column: auto;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.iconeCard {
+    margin-bottom: 14px;
+    font-size: 15px;
+    color: #54204E;
+}
+
+.cardTutoriaisFavoritos strong,
+.cardTutoriaisFinalizados strong {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cardTutoriaisFavoritos span,
+.cardTutoriaisFinalizados span {
+    font-size: 14px;
+}
+
+.cardTutoriaisFavoritos a,
+.cardTutoriaisFinalizados a {
+    align-self: flex-end;
+    margin-top: auto;
+    color: #963F6D;
+}
+
+.cardTutoriaisFavoritos a i,
+.cardTutoriaisFinalizados a i {
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.cardAlertaBemEstar {
+    grid-column: span 6;
+    height: 170px;
+    padding: 0 18px 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-self: stretch;
+    transform: translateY(-15px);
+}
+
+.cardAlertaBemEstar .cardConteudo {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.cardAlertaBemEstar .cardConteudo img {
+    width: 180px;
+    height: 170px;
+    flex-shrink: 0;
+    object-fit: contain;
+    object-position: center bottom;
+    align-self: flex-end;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.cardAlertaBemEstar .cardInformacoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    padding: 12px 0;
+}
+
+.cardAlertaBemEstar .cardInformacoes h3 {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.cardAlertaBemEstar .cardInformacoes p {
+    margin-bottom: 10px;
+    font-size: 11px;
+    line-height: 1.5;
+    color: #765A70;
+}
+
+.cardAlertaBemEstar .botaoCard {
+    align-self: flex-start;
+}
+
+@media (max-width: 1200px) {
+
+    .barraLateral {
+        width: 210px;
+        min-width: 210px;
+        padding: 25px 15px;
     }
 
-    .barra-lateral {
+    .conteudo {
+        padding: 18px;
+    }
+
+    .gradeCards {
+        gap: 12px;
+    }
+
+    .cabecalhoConteudo {
+        gap: 12px;
+    }
+
+    .filtragem {
+        gap: 6px;
+    }
+
+    .filtro {
+        padding: 7px 9px;
+        font-size: 8px;
+    }
+
+    .cardConteudo {
+        gap: 8px;
+    }
+
+    .cardConteudo img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .cardInformacoes h3 {
+        font-size: 9px;
+    }
+
+    .cardInformacoes p {
+        font-size: 9px;
+    }
+
+    .cardDestaqueDia .cardConteudo {
+        grid-template-columns: 85px minmax(0, 1fr);
+    }
+
+    .cardDestaqueDia .cardConteudo img {
+        width: 85px;
+        height: 85px;
+    }
+
+    .cardDestaqueDia .cardInformacoes h3 {
+        font-size: 11px;
+    }
+
+    .cardDestaqueDia .cardInformacoes p {
+        font-size: 10px;
+    }
+
+    .cardAlertaBemEstar .cardConteudo img {
+        width: 145px;
+    }
+
+    .avaliacao {
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .dashboardAjuda {
+        flex-direction: column;
+    }
+
+    .barraLateral {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
         min-height: auto;
-        flex: 0 0 auto;
-        padding: 14px 16px;
+        padding: 15px;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .marca {
-        width: 120px;
-        height: 48px;
-        margin: 0 auto 12px;
+        width: auto;
+        margin: 0;
+    }
+
+    .marca img {
+        width: 90px;
     }
 
     .navegacao {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 4px;
+        flex-direction: row;
+        justify-content: center;
+        width: auto;
     }
 
-    .item-navegacao {
-        min-height: 36px;
-        padding: 6px 8px;
-        font-size: 11px;
+    .itemNavegacao {
+        width: auto;
+        padding: 10px;
+    }
+
+    .itemNavegacao span {
+        display: none;
     }
 
     .recado,
@@ -205,20 +786,152 @@ body {
     }
 
     .conteudo {
-        min-height: 55vh;
+        min-height: calc(100vh - 70px);
     }
 
-    .ramo-superior {
-        top: -42px;
-        right: -55px;
-        width: 380px;
-        height: 380px;
+    .cabecalhoConteudo {
+        flex-wrap: wrap;
     }
 
-    .ramo-inferior {
-        bottom: -105px;
-        left: -50px;
-        width: 340px;
-        height: 340px;
+    .filtragem {
+        justify-content: flex-start;
+        flex-basis: 100%;
     }
+
+    .cardAlertaBemEstar {
+        transform: translateY(-15px);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .cabecalhoConteudo {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .filtragem {
+        width: 100%;
+        flex: none;
+
+        flex-wrap: nowrap;
+        overflow-x: auto;
+
+        padding-bottom: 5px;
+    }
+
+    .filtro {
+        flex-shrink: 0;
+    }
+
+    .gradeCards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cardDestaqueDia,
+    .cardUltimaPesquisa,
+    .cardRecente,
+    .cardAcessoComunidade,
+    .cardTutoriaisNaoFinalizados,
+    .cardTutoriaisFavoritos,
+    .cardTutoriaisFinalizados,
+    .cardAlertaBemEstar {
+        grid-column: span 2;
+        height: auto;
+        min-height: 170px;
+    }
+
+    .cardDestaqueDia .cardConteudo {
+        grid-template-columns: 90px minmax(0, 1fr);
+    }
+
+    .cardDestaqueDia .cardConteudo img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .cardDestaqueDia .cardRodape {
+        margin-top: 12px;
+    }
+
+    .cardRecente .cardConteudo {
+        margin-top: 12px;
+    }
+
+    .cardAcessoComunidade {
+        min-height: 185px;
+    }
+
+    .cardTutoriaisFavoritos,
+    .cardTutoriaisFinalizados {
+        height: 140px;
+        min-height: 140px;
+    }
+
+    .grupoResumo {
+        grid-column: span 2;
+        width: 100%;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grupoResumo .cardTutoriaisFavoritos,
+    .grupoResumo .cardTutoriaisFinalizados {
+        grid-column: auto;
+        height: 140px;
+        min-height: 140px;
+    }
+
+    .cardAlertaBemEstar {
+        grid-column: span 2;
+        height: 160px;
+        min-height: 160px;
+        transform: none;
+    }
+
+    .cardAlertaBemEstar .cardConteudo img {
+        width: 125px;
+        height: 160px;
+    }
+
+    .cardConteudo img {
+        width: 90px;
+        height: 80px;
+    }
+
+    .ramo {
+        width: 120px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .conteudo {
+        padding: 14px;
+    }
+
+    .barraLateral {
+        padding: 12px;
+    }
+
+    .cardConteudo {
+        gap: 8px;
+    }
+
+    .cardConteudo img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .cardAlertaBemEstar .cardConteudo img {
+        width: 100px;
+    }
+
+    .botaoCard {
+        font-size: 9px;
+        padding: 7px 10px;
+    }
+
 }
