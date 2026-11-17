@@ -173,21 +173,25 @@ body {
 }
 
 
-@media (max-width: 700px) {
-
+@media (max-width: 768px) {
     .pag-login {
         flex-direction: column;
     }
 
     .logo-completa {
         width: 100%;
-        min-height: auto;
-        height: 220px;
+        height: 380px;
+        background-color: #F8ECEC;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+
     }
 
     .logo-completa img {
         width: 100%;
-        height: 220px;
+        height: 100%;
         object-fit: cover;
         object-position: center;
     }
@@ -195,8 +199,9 @@ body {
     .dados-pagina {
         width: 100%;
         min-height: auto;
-        flex: 1;
         padding: 40px 20px;
     }
 
+ 
+    
 }

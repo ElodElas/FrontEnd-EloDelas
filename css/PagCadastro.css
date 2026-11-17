@@ -235,10 +235,47 @@ body {
     }
 }
 
-@media (max-height: 650px) and (min-width: 701px) {
+@media (max-width: 768px) {
+    .pag-cadastro {
+        flex-direction: column;
+    }
+
+    .logo-completa {
+        width: 100%;
+        min-height: 0;
+        height: 400px;
+    }
+
+    .logo-completa img {
+        height: 400px;
+        object-position: center 50%;
+    }
+
     .dados-pagina {
-        padding-top: 20px;
+        width: 100%;
+        min-height: auto;
+        padding: 32px 22px 40px;
+    }
+
+    .dados-pagina h1 {
+        max-width: 100%;
+        font-size: 21px;
+        margin-bottom: 22px;
+    }
+}
+
+@media (max-height: 700px) and (min-width: 700px) {
+    .dados-pagina {
+        padding-top: 40px;
         padding-bottom: 20px;
+    }
+
+    .logo-completa img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 
     .formulario-cadastro {
