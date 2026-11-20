@@ -5,7 +5,7 @@
     min-height: 100vh;
     padding: 40px 25px 25px;
     overflow: hidden;
-    background-color: #FFFFFF;
+    background-color: #FDF5FB;
 }
 
 .ramo {
@@ -42,7 +42,7 @@
 .saudacaoUsuario h1 {
     font-size: 20px;
     font-weight: 600;
-    color: #40183B;
+    color: #3B0B3B;
 }
 
 .saudacaoUsuario p {
@@ -69,8 +69,8 @@
     gap: 7px;
     padding: 8px 13px;
     border-radius: 20px;
-    background-color: #F6D2E8;
-    color: #54204E;
+    background-color: #F2CBE4;
+    color: #3B0B3B;
     font-size: 9px;
     white-space: nowrap;
     transition: 0.2s;
@@ -82,7 +82,7 @@
 
 .filtro:hover,
 .filtro.ativo {
-    background-color: #963F6D;
+    background-color: #903963;
     color: white;
 }
 
@@ -116,13 +116,13 @@
 .cardAcessoComunidade,
 .cardTutoriaisNaoFinalizados,
 .cardTutoriaisFinalizados {
-    background-color: #F5D0E7;
+    background-color: #F2CBE4;
 }
 
 .cardRecente,
 .cardTutoriaisFavoritos,
 .cardAlertaBemEstar {
-    background-color: #E4C9EC;
+    background-color: #E2CEF0;
 }
 
 .cardCabecalho {
@@ -139,7 +139,7 @@
     gap: 8px;
     font-size: 13px;
     font-weight: 600;
-    color: #54204E;
+    color: #3B0B3B;
 }
 
 .cardCabecalho h2 i {
@@ -194,7 +194,7 @@
     gap: 7px;
     padding: 8px 13px;
     border-radius: 20px;
-    background-color: #963F6D;
+    background-color: #903963;
     color: white;
     font-size: 10px;
     font-weight: 500;
@@ -203,7 +203,7 @@
 }
 
 .botaoCard:hover {
-    background-color: #702C50;
+    background-color: #3B0B3B;
 }
 
 .botaoCard i {
@@ -212,7 +212,7 @@
 }
 
 .avaliacao {
-    color: #963F6D;
+    color: #903963;
 
     font-size: 16px;
     letter-spacing: 1.2px;
@@ -229,7 +229,7 @@
     border: none;
     background: transparent;
 
-    color: #54204E;
+    color: #3B0B3B;
     font-size: 17px;
 }
 
@@ -237,7 +237,7 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: #54204E;
+    color: #3B0B3B;
     font-size: 11px;
     font-weight: 500;
     white-space: nowrap;
@@ -301,7 +301,7 @@
     display: block;
     margin-bottom: 7px;
     font-size: 10px;
-    color: #963F6D;
+    color: #903963;
 }
 
 .cardUltimaPesquisa .cardConteudo {
@@ -372,8 +372,8 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background-color: #D9A8C9;
-    color: #71345E;
+    background-color: #DFA9D1;
+    color: #903963;
     font-size: 9px;
     font-weight: 500;
 }
@@ -444,7 +444,7 @@
 .iconeCard {
     margin-bottom: 14px;
     font-size: 15px;
-    color: #54204E;
+    color: #3B0B3B;
 }
 
 .cardTutoriaisFavoritos strong,
@@ -462,7 +462,7 @@
 .cardTutoriaisFinalizados a {
     align-self: flex-end;
     margin-top: auto;
-    color: #963F6D;
+    color: #903963;
 }
 
 .cardTutoriaisFavoritos a i,
@@ -519,7 +519,42 @@
     margin-bottom: 10px;
     font-size: 11px;
     line-height: 1.5;
-    color: #765A70;
+    color: #3B0B3B;
+}
+
+/* Paleta do Figma aplicada somente à DashboardAjuda */
+.dashboardAjuda {
+    color: #3B0B3B;
+}
+
+.dashboardAjuda .barraLateral {
+    background-color: #903963;
+}
+
+.dashboardAjuda .itemNavegacao:hover,
+.dashboardAjuda .itemNavegacao.ativo {
+    background-color: #F2CBE4;
+    color: #3B0B3B;
+}
+
+.dashboardAjuda .recado {
+    background-color: #F2CBE4;
+    color: #000000;
+}
+
+.dashboardAjuda .avatar {
+    background-color: #DFA9D1;
+    color: #FFFFFF;
+}
+
+.dashboardAjuda .cardAcessoComunidade .botaoCard {
+    background-color: #DFA9D1;
+    color: #903963;
+}
+
+.dashboardAjuda .cardAlertaBemEstar .botaoCard {
+    background-color: #BFA3E0;
+    color: #3B0B3B;
 }
 
 .cardAlertaBemEstar .botaoCard {
