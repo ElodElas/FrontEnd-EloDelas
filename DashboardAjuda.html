@@ -1,393 +1,219 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Ajuda Rápida | Elo d'Elas</title>
 
     <link rel="stylesheet" href="css/DashboardBase.css">
-
     <link rel="stylesheet" href="css/DashboardAjuda.css">
+    <link rel="stylesheet" href="css/DashboardAjudaModais.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
-
-    <main class="dashboardAjuda">
-        <aside class="barraLateral">
-
-            <a class="marca" href="PagLogin.html" aria-label="Elo d'Elas - início">
-                <img src="img/LogoNegativa.png" alt="Elo d'Elas">
-            </a>
-
-            <nav class="navegacao" aria-label="Navegação principal">
-
-                <a href="HomePage.html" class="itemNavegacao">
-                    <i class="fa-solid fa-house"></i>
-                    <span>Início</span>
-                </a>
-
-                <a href="DashboardAjuda.html" class="itemNavegacao ativo" aria-current="page">
-                    <i class="fa-regular fa-clipboard"></i>
-                    <span>Ajuda Rápida</span>
-                </a>
-
-                <a href="DashboardOportunidade.html" class="itemNavegacao">
-                    <i class="fa-solid fa-medal"></i>
-                    <span>Oportunidades de Crescimento</span>
-                </a>
-
-                <a href="DashboardComunidade.html" class="itemNavegacao">
-                    <i class="fa-solid fa-people-group"></i>
-                    <span>Comunidade</span>
-                </a>
-
-                <a href="#protecao" class="itemNavegacao">
-                    <i class="fa-solid fa-circle-exclamation"></i>
-                    <span>Proteção</span>
-                </a>
-
-            </nav>
-
-            <section class="recado" aria-label="Mensagem da comunidade">
-                <h2>Juntas somos mais fortes.</h2>
-                <p>A força feminina é mostrada com mulheres conectadas.</p>
-            </section>
-
-            <a href="#perfil" class="usuario">
-
-                <span class="avatar" aria-hidden="true">C</span>
-
-                <span class="dadosUsuario">
-                    <strong>Ana Beatriz</strong>
-                    <small>Psicóloga</small>
-                </span>
-
-            </a>
-
-        </aside>
-
-
-        <section class="conteudo" aria-label="Ajuda rápida">
-            <img class="ramo ramoSuperior" src="img/Ramo%20Topo.png" alt="" aria-hidden="true">
-
-            <img class="ramo ramoInferior" src="img/Ramo%20baixo.png" alt="" aria-hidden="true">
-
-            <header class="cabecalhoConteudo">
-
-                <div class="saudacaoUsuario">
-                    <h1>Olá, Ana Beatriz! ♡</h1>
-                    <p>Que bom ter você por aqui!</p>
-                </div>
-                <nav class="filtragem" aria-label="Categorias de tutoriais">
-
-                    <a href="#" class="filtro ativo">
-                        <i class="fa-solid fa-house"></i>
-                        Todos
-                    </a>
-
-                    <a href="#" class="filtro">
-                        <i class="fa-regular fa-star"></i>
-                        Abrir um negócio
-                    </a>
-
-                    <a href="#" class="filtro">
-                        <i class="fa-solid fa-laptop"></i>
-                        Tecnologia
-                    </a>
-
-                    <a href="#" class="filtro">
-                        <i class="fa-solid fa-truck"></i>
-                        Logística
-                    </a>
-
-                    <a href="#" class="filtro">
-                        <i class="fa-solid fa-microchip"></i>
-                        Inteligência Artificial
-                    </a>
-
-                    <a href="#" class="filtro">
-                        <i class="fa-regular fa-heart"></i>
-                        Saúde e Bem Estar
-                    </a>
-
-                </nav>
-
-            </header>
-
-            <section class="gradeCards" aria-label="Painel de tutoriais">
-
-                <article class="cardDestaqueDia">
-
-                    <div class="cardCabecalho">
-                        <h2>
-                            <i class="fa-solid fa-star"></i>
-                            Destaque do dia
-                        </h2>
-
-                        <button class="botaoIcone" aria-label="Adicionar aos favoritos">
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                    </div>
-
-                    <div class="cardConteudo">
-
-                        <img src="img/Frutas.png" alt="Frutas e verduras frescas">
-
-                        <div class="cardInformacoes">
-                            <h3>Como escolher frutas e verduras?</h3>
-
-                            <p>
-                                Aprenda a identificar frutas e verduras frescas,
-                                saiba o que observar na hora de escolher e evitar desperdícios.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div class="cardRodape">
-
-                        <a href="#" class="botaoCard">
-                            Ver Tutorial
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-
-                        <span class="avaliacao" aria-label="Avaliação 4 de 5">
-                            ★★★★☆
-                        </span>
-
-                    </div>
-
-                </article>
-
-                <article class="cardUltimaPesquisa">
-
-                    <div class="cardCabecalho">
-                        <h2>
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            Última Pesquisa
-                        </h2>
-                    </div>
-
-                    <span class="dataPesquisa">Ontem</span>
-
-                    <div class="cardConteudo">
-
-                        <img src="img/Doce.png" alt="Bolo de cenoura com cobertura de chocolate">
-
-                        <div class="cardInformacoes">
-                            <h3>Receita Bolo de Cenoura</h3>
-
-                            <p>
-                                Aprenda a fazer um bolo de cenoura fofinho
-                                com cobertura de chocolate.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div class="cardRodape">
-
-                        <a href="#" class="botaoCard">
-                            Ver Tutorial
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-
-                        <span class="avaliacao" aria-label="Avaliação 4 de 5">
-                            ★★★★☆
-                        </span>
-
-                    </div>
-
-                </article>
-
-                <article class="cardRecente">
-
-                    <div class="cardCabecalho">
-                        <h2>
-                            <i class="fa-solid fa-bullhorn"></i>
-                            Adicionado Recentemente
-                        </h2>
-
-                        <button class="botaoIcone" aria-label="Adicionar aos favoritos">
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                    </div>
-
-                    <div class="cardConteudo">
-
-                        <img src="img/Sobrecarga.png" alt="Mulher trabalhando em um notebook">
-
-                        <div class="cardInformacoes">
-                            <h3>Como lidar com a sobrecarga de tarefas?</h3>
-
-                            <p>
-                                Organize suas tarefas e respeite seus próprios limites
-                                para ter uma rotina mais leve.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <div class="cardRodape">
-
-                        <a href="#" class="botaoCard">
-                            Ver Tutorial
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-
-                        <span class="avaliacao" aria-label="Avaliação 4 de 5">
-                            ★★★★☆
-                        </span>
-
-                    </div>
-
-                </article>
-
-                <article class="cardAcessoComunidade" id="comunidade">
-
-                    <div class="cardCabecalho">
-
-                        <h2>
-                            <i class="fa-solid fa-people-group"></i>
-                            Comunidade
-                        </h2>
-
-                        <a href="#" class="linkCard">
-                            Ver mais
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-
-                    </div>
-
-                    <div class="listaAvatares">
-                        <span>A</span>
-                        <span>B</span>
-                        <span>C</span>
-                        <span>D</span>
-                        <span>E</span>
-                        <span>F</span>
-                        <span>+12</span>
-                    </div>
-
-                    <p>
-                        Conecte-se com outras mulheres que também estão nessa jornada.
-                    </p>
-
-                    <a href="#" class="botaoCard">
-                        Entrar na comunidade
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-
-                </article>
-
-                <article class="cardTutoriaisNaoFinalizados">
-
-                    <div class="cardCabecalho">
-
-                        <h2>
-                            <i class="fa-solid fa-book-open"></i>
-                            Todos os tutoriais
-                        </h2>
-
-                        <a href="#" class="linkCard">
-                            Ver todos
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-
-                    </div>
-
-                    <div class="cardConteudo">
-
-                        <img src="img/SegurancaDigital.png" alt="Notebook sobre uma mesa de trabalho">
-
-                        <div class="cardInformacoes">
-                            <h3>Como se proteger no ambiente digital?</h3>
-
-                            <p>
-                                Aprenda dicas simples para se manter segura online.
-                            </p>
-                        </div>
-
-                        <a href="#" class="botaoCard">
-                            Continuar
-                            <i class="fa-solid fa-play"></i>
-                        </a>
-
-                    </div>
-
-                </article>
-
-                <div class="grupoResumo">
-
-                    <article class="cardTutoriaisFavoritos">
-
-                        <i class="fa-regular fa-heart iconeCard"></i>
-
-                        <strong>3</strong>
-                        <span>Favoritos</span>
-
-                        <a href="#" aria-label="Ver tutoriais favoritos">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-
-                    </article>
-
-                    <article class="cardTutoriaisFinalizados">
-
-                        <i class="fa-solid fa-trophy iconeCard"></i>
-
-                        <strong>12</strong>
-                        <span>Finalizados</span>
-
-                        <a href="#" aria-label="Ver tutoriais finalizados">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </a>
-
-                    </article>
-
-                </div>
-
-                <article class="cardAlertaBemEstar" id="protecao">
-
-                    <div class="cardConteudo">
-
-                        <img src="img/BemEstar.png" alt="Ilustração de mulher praticando autocuidado">
-
-                        <div class="cardInformacoes">
-
-                            <h3>Cuide de você!</h3>
-
-                            <p>
-                                Sua saúde mental também é prioridade.
-                            </p>
-
-                            <a href="#" class="botaoCard">
-                                Saiba mais
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-            </section>
-
+<main class="dashboardAjuda">
+    <aside class="barraLateral">
+        <a class="marca" href="PagLogin.html" aria-label="Elo d'Elas - início">
+            <img src="img/LogoNegativa.png" alt="Elo d'Elas">
+        </a>
+
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a href="HomePage.html" class="itemNavegacao"><i class="fa-solid fa-house"></i><span>Início</span></a>
+            <a href="DashboardAjuda.html" class="itemNavegacao ativo" aria-current="page"><i class="fa-regular fa-clipboard"></i><span>Ajuda Rápida</span></a>
+            <a href="DashboardOportunidade.html" class="itemNavegacao"><i class="fa-solid fa-medal"></i><span>Oportunidades de Crescimento</span></a>
+            <a href="DashboardComunidade.html" class="itemNavegacao"><i class="fa-solid fa-people-group"></i><span>Comunidade</span></a>
+            <a href="#protecao" class="itemNavegacao"><i class="fa-solid fa-circle-exclamation"></i><span>Proteção</span></a>
+        </nav>
+
+        <section class="recado" aria-label="Mensagem da comunidade">
+            <h2>Juntas somos mais fortes.</h2>
+            <p>A força feminina é mostrada com mulheres conectadas.</p>
         </section>
 
-    </main>
+        <a href="#perfil" class="usuario">
+            <span class="avatar" aria-hidden="true">C</span>
+            <span class="dadosUsuario"><strong>Ana Beatriz</strong><small>Psicóloga</small></span>
+        </a>
+    </aside>
 
+    <section class="conteudo" aria-label="Ajuda rápida">
+        <img class="ramo ramoSuperior" src="img/Ramo%20Topo.png" alt="" aria-hidden="true">
+        <img class="ramo ramoInferior" src="img/Ramo%20baixo.png" alt="" aria-hidden="true">
+
+        <header class="cabecalhoConteudo">
+            <div class="saudacaoUsuario">
+                <h1>Olá, Ana Beatriz! ♡</h1>
+                <p>Que bom ter você por aqui!</p>
+            </div>
+
+            <nav class="filtragem" aria-label="Categorias de tutoriais">
+                <a href="#" class="filtro ativo"><i class="fa-solid fa-house"></i>Todos</a>
+                <a href="#" class="filtro"><i class="fa-regular fa-star"></i>Abrir um negócio</a>
+                <a href="#" class="filtro"><i class="fa-solid fa-laptop"></i>Tecnologia</a>
+                <a href="#" class="filtro"><i class="fa-solid fa-truck"></i>Logística</a>
+                <a href="#" class="filtro"><i class="fa-solid fa-microchip"></i>Inteligência Artificial</a>
+                <a href="#" class="filtro"><i class="fa-regular fa-heart"></i>Saúde e Bem Estar</a>
+            </nav>
+        </header>
+
+        <section class="gradeCards" aria-label="Painel de tutoriais">
+
+            <article class="cardDestaqueDia">
+                <div class="cardCabecalho">
+                    <h2><i class="fa-solid fa-star"></i>Destaque do dia</h2>
+                    <button class="botaoIcone" type="button" data-favorite="frutas" aria-label="Adicionar aos favoritos">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+
+                <div class="cardConteudo">
+                    <img src="img/Frutas.png" alt="Frutas e verduras frescas">
+                    <div class="cardInformacoes">
+                        <h3>Como escolher frutas e verduras?</h3>
+                        <p>Aprenda a identificar frutas e verduras frescas, saiba o que observar na hora de escolher e evitar desperdícios.</p>
+                    </div>
+                </div>
+
+                <div class="cardRodape">
+                    <button class="botaoCard" type="button" data-open-tutorial="frutas">
+                        Ver Tutorial <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <span class="avaliacao" aria-label="Avaliação 4 de 5">★★★★☆</span>
+                </div>
+            </article>
+
+            <article class="cardUltimaPesquisa">
+                <div class="cardCabecalho">
+                    <h2><i class="fa-solid fa-magnifying-glass"></i>Última Pesquisa</h2>
+                </div>
+
+                <span class="dataPesquisa">Ontem</span>
+
+                <div class="cardConteudo">
+                    <img src="img/Doce.png" alt="Bolo de cenoura com cobertura de chocolate">
+                    <div class="cardInformacoes">
+                        <h3>Receita: bolo de cenoura</h3>
+                        <p>Aprenda a fazer um bolo de cenoura fofinho com cobertura de chocolate.</p>
+                    </div>
+                </div>
+
+                <div class="cardRodape">
+                    <button class="botaoCard" type="button" data-open-tutorial="bolo">
+                        Ver Tutorial <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <span class="avaliacao" aria-label="Avaliação 4 de 5">★★★★☆</span>
+                </div>
+            </article>
+
+            <article class="cardRecente">
+                <div class="cardCabecalho">
+                    <h2><i class="fa-solid fa-bullhorn"></i>Adicionado Recentemente</h2>
+                    <button class="botaoIcone" type="button" data-favorite="sobrecarga" aria-label="Adicionar aos favoritos">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+
+                <div class="cardConteudo">
+                    <img src="img/Sobrecarga.png" alt="Mulher trabalhando em um notebook">
+                    <div class="cardInformacoes">
+                        <h3>Como lidar com a sobrecarga de tarefas?</h3>
+                        <p>Organize suas tarefas e respeite seus próprios limites para ter uma rotina mais leve.</p>
+                    </div>
+                </div>
+
+                <div class="cardRodape">
+                    <button class="botaoCard" type="button" data-open-tutorial="sobrecarga">
+                        Ver Tutorial <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <span class="avaliacao" aria-label="Avaliação 4 de 5">★★★★☆</span>
+                </div>
+            </article>
+
+            <article class="cardAcessoComunidade" id="comunidade">
+                <div class="cardCabecalho">
+                    <h2><i class="fa-solid fa-people-group"></i>Comunidade</h2>
+                    <a href="#" class="linkCard">Ver mais <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="listaAvatares">
+                    <span>A</span><span>B</span><span>C</span>
+                    <span>D</span><span>E</span><span>F</span><span>+12</span>
+                </div>
+
+                <p>Conecte-se com outras mulheres que também estão nessa jornada.</p>
+
+                <a href="#" class="botaoCard">
+                    Entrar na comunidade <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </article>
+
+            <article class="cardTutoriaisNaoFinalizados">
+                <div class="cardCabecalho">
+                    <h2><i class="fa-solid fa-book-open"></i>Todos os tutoriais</h2>
+                    <button type="button" class="linkCard" data-open-list="all">
+                        Ver todos <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="cardConteudo">
+                    <img src="img/SegurancaDigital.png" alt="Notebook sobre uma mesa de trabalho">
+
+                    <div class="cardInformacoes">
+                        <h3>Como se proteger no ambiente digital?</h3>
+                        <p>Aprenda dicas simples para se manter segura online.</p>
+                    </div>
+
+                    <button type="button" class="botaoCard" data-open-tutorial="seguranca">
+                        Continuar <i class="fa-solid fa-play"></i>
+                    </button>
+                </div>
+            </article>
+
+            <div class="grupoResumo">
+                <article class="cardTutoriaisFavoritos" role="button" tabindex="0"
+                    data-open-list="favorites" aria-label="Ver tutoriais favoritos">
+                    <i class="fa-regular fa-heart iconeCard"></i>
+                    <strong id="favoriteCount">3</strong>
+                    <span>Favoritos</span>
+                    <span class="resumoSeta"><i class="fa-solid fa-chevron-right"></i></span>
+                </article>
+
+                <article class="cardTutoriaisFinalizados" role="button" tabindex="0"
+                    data-open-list="completed" aria-label="Ver tutoriais finalizados">
+                    <i class="fa-solid fa-trophy iconeCard"></i>
+                    <strong id="completedCount">12</strong>
+                    <span>Finalizados</span>
+                    <span class="resumoSeta"><i class="fa-solid fa-chevron-right"></i></span>
+                </article>
+            </div>
+
+            <article class="cardAlertaBemEstar" id="protecao">
+                <div class="cardConteudo">
+                    <img src="img/BemEstar.png" alt="Ilustração de mulher praticando autocuidado">
+
+                    <div class="cardInformacoes">
+                        <h3>Cuide de você!</h3>
+                        <p>Sua saúde mental também é prioridade.</p>
+                        <button type="button" class="botaoCard" data-open-list="wellness">
+                            Saiba mais <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </section>
+</main>
+
+<!-- Os modais são montados pelo DashboardAjuda.js -->
+<div id="modalRoot"></div>
+
+<script src="js/DashboardAjuda.js" defer></script>
 </body>
-
 </html>
