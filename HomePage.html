@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Início | Elo d'Elas</title>
+    <link rel="shortcut icon" href="./img/LogoElod'Elas1.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/Header.css">
     <link rel="stylesheet" href="./css/HomePage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +32,8 @@
             </ul>
 
             <div class="btns-nav">
-                <button class="btn-nav singup-btn" onclick="window.location.href='./PagCadastro.html'">Cadastre-se</button>
+                <button class="btn-nav singup-btn"
+                    onclick="window.location.href='./PagCadastro.html'">Cadastre-se</button>
                 <button class="btn-nav login-btn" onclick="window.location.href='./PagLogin.html'">Login</button>
             </div>
         </nav>
@@ -66,29 +68,39 @@
                 <img src="./img/HomePage/LogoLetters.png" alt="Logo Letras Elo d'Elas">
             </div>
 
-            <div class="carousel-container">
-                <div class="card" id="card1">
+            <div class="carousel-container" id="carousel">
+                <div class="card">
                     <h2>O que é?</h2>
                     <p>O Elo d'Elas é uma plataforma digital que conecta mulheres a oportunidades e recursos de apoio
                         que contribuam para seu desenvolvimento pessoal e profissional.</p>
                 </div>
 
-                <div class="card" id="card2">
+                <div class="card">
                     <h2>Propósito</h2>
                     <p>O Elo D'Elas nasceu para fortalecer a autonomia feminina, aproximando mulheres de conhecimentos,
                         oportunidades e novas possibilidades.</p>
                 </div>
 
-                <div class="card" data-index="card3">
+                <div class="card">
                     <h2>Evoluir</h2>
                     <p>Acreditamos que a união, a colaboração e a troca de experiências são essenciais para o
                         crescimento e fortalecimento de cada mulher.</p>
                 </div>
             </div>
+
+            <h1 class="more-title">Conheça Mais!</h1>
         </section>
 
         <section class="more-section">
+            <div class="more-info">
+                <p>Descubra tudo o que podemos construir juntas.</p>
 
+                <div class="arrow-down">
+                    <a href="#">
+                        <i class="fa-solid fa-angles-down"></i>
+                    </a>
+                </div>
+            </div>
         </section>
 
         <section class="contributor-section">
@@ -96,7 +108,7 @@
         </section>
     </main>
 
-    <script src="./js/script.js"></script>
+    <script src="./js/HomePage.js"></script>
 </body>
 
 </html>

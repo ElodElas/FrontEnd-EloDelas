@@ -30,6 +30,10 @@ body {
     flex-direction: column;
 }
 
+main > section {
+    scroll-margin-top: 107px;
+}
+
 main {
     flex: 1;
     display: flex;
@@ -38,6 +42,26 @@ main {
     & h1 {
         font-family: 'Playfair Display', sans-serif;
         color: var(--c5);
+    }
+
+    & .arrow-down {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        & a {
+            font-size: 40px;
+            color: var(--c4);
+            text-decoration: none;
+            display: flex;
+            animation: jump 1s linear infinite;
+            transition: .3s ease-in;
+
+            &:hover {
+                color: var(--c3);
+                animation: paused;
+            }
+        }
     }
 
     & .hero-section {
@@ -118,24 +142,7 @@ main {
         }
 
         & .arrow-down {
-            position: absolute;
             bottom: 1.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-
-            & a {
-                font-size: 40px;
-                color: var(--c4);
-                text-decoration: none;
-                display: flex;
-                animation: jump 1s linear infinite;
-                transition: .3s ease-in;
-
-                &:hover {
-                    color: var(--c3);
-                    animation: paused;
-                }
-            }
         }
 
     }
@@ -162,10 +169,17 @@ main {
         }
     }
 
+    & h1 {
+        font-size: 45px;
+    }
+
     & .about-section {
         flex: 1 0 auto;
         min-height: calc(100vh - 107px);
         background-color: var(--c8);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         & .title {
             display: flex;
@@ -173,10 +187,8 @@ main {
             justify-content: center;
             gap: 12px;
             margin-top: 60px;
+            /* margin-top: 60px; */
 
-            & h1 {
-                font-size: 45px;
-            }
 
             & img {
                 height: 100px;
@@ -184,47 +196,61 @@ main {
         }
 
         & .carousel-container {
-            display: flex;
-            justify-content: center;
+            flex: 1;
             position: relative;
-            min-height: 450px;
+            width: min(960px, 100%);
+            min-height: 340px;
             perspective: 1000px;
-            overflow: hidden;
-            margin-top: 44px;
+            /* overflow: hidden; */
+            touch-action: pan-y;
 
             & .card {
-                width: 27rem;
-                padding: 69px 59px;
-                border-radius: 20px;
-                border: 8px solid var(--c1);
-                background-color: var(--c4);
-                color: var(--c1);
-                font-family: 'Raleway', sans-serif;
                 position: absolute;
-                top: 0;
-                box-sizing: border-box;
+                top: 50%;
+                left: 50%;
+                width: 24rem;
+                min-height: 200px;
+                padding: 50px 55px;
+                background-image: linear-gradient(130deg, #963f5dd9 0%, #963F5D 100%);
+                color: var(--c1);
+                border: 8px solid var(--c1);
+                border-radius: 20px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+                font-family: 'Raleway', sans-serif;
                 display: flex;
                 flex-direction: column;
-                gap: 24px;
-                transition: transform .4s;
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+                gap: 20px;
+                transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+                user-select: none;
 
                 & h2 {
-                    font-size: 36px;
+                    font-size: 30px;
                 }
 
                 & p {
-                    font-size: 24px;
+                    font-size: 19px;
                 }
             }
-
         }
 
-        & #card1
-        #card2
-        #card3 {
-            transform: translate3d(600px, 0, -180px) rotateY(-25deg);
-            z-index: 2;
+        & .more-title {
+            margin-bottom: 20px;
+        }
+    }
+
+    & .more-section {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & p {
+            font-family: 'Playfair Display', sans-serif;
+            font-weight: 800;
+        }
+
+        & .arrow-down {
+            margin-top: 40px;
         }
     }
 }
