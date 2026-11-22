@@ -1,14 +1,11 @@
-
-/* =====================================================
-   DASHBOARD DE OPORTUNIDADES
-   Estilos compartilhados importados de DashboardBase.css
-===================================================== */
+/* ==========================================================
+   DASHBOARD OPORTUNIDADE - ELO D'ELAS
+   ========================================================== */
 
 .dashboardOportunidade {
     font-family: 'Poppins', sans-serif;
+    color: #3B0B3B;
 }
-
-/* ESTRUTURA PRINCIPAL */
 
 main.dashboardOportunidade {
     display: flex;
@@ -20,6 +17,23 @@ main.dashboardOportunidade {
 
 .dashboardOportunidade .barraLateral {
     flex-shrink: 0;
+    background: #903963;
+}
+
+.dashboardOportunidade .itemNavegacao:hover,
+.dashboardOportunidade .itemNavegacao.ativo {
+    background: #F2CBE4;
+    color: #3B0B3B;
+}
+
+.dashboardOportunidade .recado {
+    background: #F2CBE4;
+    color: #000;
+}
+
+.dashboardOportunidade .avatar {
+    background: #BFA3E0;
+    color: #FFF;
 }
 
 .dashboardOportunidade .conteudoOportunidade {
@@ -30,13 +44,13 @@ main.dashboardOportunidade {
     min-width: 0;
     min-height: 100vh;
     margin: 0;
-    padding: 25px 35px 12px;
+    padding: 25px 35px 30px;
     box-sizing: border-box;
     overflow: hidden;
-    background-color: #FDF5FB;
+    background: #FDF5FB;
 }
 
-/* RAMOS DECORATIVOS */
+/* RAMOS */
 
 .dashboardOportunidade .ramo {
     position: absolute;
@@ -48,15 +62,12 @@ main.dashboardOportunidade {
 .dashboardOportunidade .ramoSuperior {
     top: 0;
     right: 0;
-    left: auto;
     width: 115px;
 }
 
 .dashboardOportunidade .ramoInferior {
     bottom: 0;
     left: 0;
-    right: auto;
-    top: auto;
     width: 145px;
 }
 
@@ -89,50 +100,42 @@ main.dashboardOportunidade {
     font-weight: 500;
 }
 
-/* BARRA DE PESQUISA */
+/* PESQUISA */
 
-.barraPesquisa {
+.barraPesquisa,
+.pesquisaListagem {
     display: flex;
     align-items: center;
     gap: 10px;
-    width: 230px;
-    height: 38px;
+    width: 265px;
+    height: 42px;
     padding: 0 15px;
     box-sizing: border-box;
     border: 1px solid #F2CBE4;
     border-radius: 25px;
-    background-color: #FDF5FB;
+    background: #FDF5FB;
     color: #903963;
-    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.barraPesquisa:focus-within {
+.barraPesquisa:focus-within,
+.pesquisaListagem:focus-within {
     border-color: #903963;
-    box-shadow: 0 0 0 3px rgba(144, 57, 99, 0.08);
+    box-shadow: 0 0 0 3px rgba(144, 57, 99, .08);
 }
 
-.barraPesquisa i {
-    font-size: 13px;
-}
-
-.barraPesquisa input {
+.barraPesquisa input,
+.pesquisaListagem input {
     width: 100%;
     min-width: 0;
-    border: none;
-    outline: none;
+    border: 0;
+    outline: 0;
     background: transparent;
     color: #3B0B3B;
     font-family: inherit;
     font-size: 12px;
 }
 
-.barraPesquisa input::placeholder {
-    color: #903963;
-}
-
-/* =====================================================
-   BANNER PRINCIPAL
-===================================================== */
+/* BANNER */
 
 .bannerOportunidade {
     position: relative;
@@ -140,14 +143,12 @@ main.dashboardOportunidade {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 120px;
+    height: 140px;
     margin-bottom: 27px;
     overflow: visible;
     border-radius: 16px;
-    background-color: #F2CBE4;
+    background: #F2CBE4;
 }
-
-/* MULHER ULTRAPASSANDO O BANNER */
 
 .mulherOportunidade {
     position: relative;
@@ -155,9 +156,7 @@ main.dashboardOportunidade {
     align-self: flex-end;
     width: 250px;
     height: 180px;
-    margin-left: 0;
     margin-top: -15px;
-    margin-bottom: 0;
     object-fit: contain;
     object-position: center bottom;
     flex-shrink: 0;
@@ -175,23 +174,20 @@ main.dashboardOportunidade {
     color: #3B0B3B;
     font-size: 23px;
     font-weight: 700;
-    line-height: 1.2;
 }
 
 .textoBanner p {
     max-width: 430px;
     color: #3B0B3B;
     font-size: 15px;
-    line-height: 1.35;
+    line-height: 1.5;
 }
-
-/* DECORAÇÃO DO BANNER */
 
 .bannerDecoracao {
     position: absolute;
     top: 50%;
     color: #903963;
-    opacity: 0.85;
+    opacity: .85;
     transform: translateY(-50%);
     pointer-events: none;
 }
@@ -210,21 +206,19 @@ main.dashboardOportunidade {
     transform: translateY(-50%) rotate(35deg);
 }
 
-/* =====================================================
-   ACESSOS RÁPIDOS
-===================================================== */
+/* ACESSOS RÁPIDOS */
 
 .secaoAcessos {
     position: relative;
     z-index: 1;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .tituloSecao {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin: 0 0 10px 2px;
+    margin: 0 0 12px 2px;
     color: #3B0B3B;
     font-size: 16px;
     font-weight: 600;
@@ -232,7 +226,6 @@ main.dashboardOportunidade {
 
 .tituloSecao i {
     color: #903963;
-    font-size: 16px;
 }
 
 .gradeAcessos {
@@ -242,78 +235,62 @@ main.dashboardOportunidade {
     padding: 0 15px;
 }
 
-/* CARDS DE ACESSO */
-
 .cardAcesso {
     display: flex;
     width: 100%;
-    height: 170px;
     min-width: 0;
     min-height: 170px;
-    box-sizing: border-box;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     padding: 20px 12px 14px;
+    border: 0;
     border-radius: 17px;
-    background-color: #E2CEF0;
-    box-shadow: 0 2px 7px rgba(59, 11, 59, 0.08);
+    background: #E2CEF0;
+    box-shadow: 0 2px 7px rgba(59, 11, 59, .08);
     color: #3B0B3B;
     text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
 }
 
 .cardAcesso:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 12px rgba(59, 11, 59, 0.13);
+    box-shadow: 0 5px 12px rgba(59, 11, 59, .13);
 }
-
-/* ÍCONES */
 
 .iconeAcesso {
     min-height: 33px;
     margin-bottom: 9px;
-    color: #3B0B3B;
     font-size: 23px;
 }
 
-/* TÍTULOS */
-
 .cardAcesso h3 {
     margin-bottom: 10px;
-    color: #3B0B3B;
     font-size: 14px;
     font-weight: 600;
 }
 
-/* DESCRIÇÕES */
-
 .cardAcesso p {
     max-width: 145px;
     min-height: 34px;
-    color: #3B0B3B;
     font-size: 12px;
     line-height: 1.5;
 }
 
-/* SETAS */
-
 .setaAcesso {
     margin-top: auto;
     color: #903963;
-    font-size: 14px;
 }
 
-/* =====================================================
-   PAINÉIS INFERIORES
-===================================================== */
+/* PAINÉIS INFERIORES */
 
 .painelInferior {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 1.2fr 0.9fr;
-    align-items: stretch;
+    grid-template-columns: 1.2fr .9fr;
     gap: 26px;
     padding: 0 15px;
 }
@@ -322,23 +299,21 @@ main.dashboardOportunidade {
 .cardVagas {
     display: flex;
     min-width: 0;
-    height: 215px;
+    min-height: 200px;
     flex-direction: column;
     padding: 20px 22px;
     box-sizing: border-box;
     border-radius: 17px;
-    background-color: #F2CBE4;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    background: #F2CBE4;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .08);
 }
-
-/* CABEÇALHO DOS CARDS */
 
 .cabecalhoCard {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
 .cabecalhoCard h2 {
@@ -352,41 +327,62 @@ main.dashboardOportunidade {
 
 .cabecalhoCard h2 i {
     color: #903963;
-    font-size: 16px;
 }
 
-.cabecalhoCard > a {
+.linkVerTodos {
     display: inline-flex;
     align-items: center;
     gap: 5px;
+    padding: 5px;
+    border: 0;
+    background: transparent;
     color: #3B0B3B;
+    font-family: inherit;
     font-size: 12px;
-    white-space: nowrap;
+    cursor: pointer;
 }
 
-/* =====================================================
-   CARD DE CURSOS
-===================================================== */
+.linkVerTodos:hover {
+    color: #903963;
+}
 
-.cursoDestaque {
+/* DESTAQUE DE CURSO */
+
+.cursoDestaqueBotao {
     display: flex;
-    align-items: center;
-    gap: 19px;
+    width: 100%;
     min-width: 0;
     flex: 1;
+    align-items: center;
+    gap: 19px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
 }
 
-/* Imagem do curso */
-
-.cursoDestaque > img {
+.imagemDestaqueCurso {
+    display: flex;
     width: 137px;
     height: 110px;
     flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     border-radius: 10px;
-    object-fit: cover;
+    background: #E2CEF0;
+    color: #903963;
+    font-size: 35px;
 }
 
-/* Informações do curso */
+.imagemDestaqueCurso img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 .informacoesCurso {
     display: flex;
@@ -398,7 +394,6 @@ main.dashboardOportunidade {
 
 .informacoesCurso h3 {
     margin-bottom: 7px;
-    color: #3B0B3B;
     font-size: 16px;
     font-weight: 600;
 }
@@ -406,12 +401,9 @@ main.dashboardOportunidade {
 .informacoesCurso p {
     max-width: 390px;
     margin-bottom: 13px;
-    color: #3B0B3B;
     font-size: 12px;
     line-height: 1.6;
 }
-
-/* Botão assistir */
 
 .botaoCurso {
     display: inline-flex;
@@ -419,96 +411,41 @@ main.dashboardOportunidade {
     gap: 8px;
     padding: 9px 17px;
     border-radius: 20px;
-    background-color: #903963;
-    color: #FFFFFF;
+    background: #903963;
+    color: #FFF;
     font-size: 11px;
     font-weight: 500;
-    transition: background-color 0.2s;
 }
 
-.botaoCurso:hover {
-    background-color: #3B0B3B;
-}
-
-.botaoCurso i {
-    font-size: 11px;
-}
-
-/* INDICADORES DO CARROSSEL */
-
-.indicadoresCarrossel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 9px;
-    margin-top: auto;
-    padding-top: 15px;
-}
-
-.indicadoresCarrossel span {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background-color: #FDF5FB;
-}
-
-.indicadoresCarrossel span.ativo {
-    background-color: #903963;
-}
-
-/* =====================================================
-   CARD DE VAGAS
-===================================================== */
-
-.cardVagas {
-    height: 215px;
-    min-height: 215px;
-    max-height: 215px;
-    overflow: hidden;
-}
-
-/* Cabeçalho */
-
-.cardVagas .cabecalhoCard {
-    margin-bottom: 10px;
-    flex-shrink: 0;
-}
-
-/* Lista de vagas */
+/* DESTAQUES DE VAGAS */
 
 .listaVagas {
     display: flex;
     flex: 1;
-    min-height: 0;
     flex-direction: column;
     justify-content: space-evenly;
-    gap: 0;
-    overflow: visible;
+    gap: 10px;
 }
-
-/* Cada vaga */
 
 .itemVaga {
     display: flex;
+    width: 100%;
     align-items: flex-start;
     gap: 10px;
-    min-width: 0;
-    flex-shrink: 0;
+    padding: 5px 0;
+    border: 0;
+    background: transparent;
     color: #3B0B3B;
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
 }
-
-/* Ícone da vaga */
 
 .iconeVaga {
     width: 16px;
     margin-top: 2px;
-    color: #3B0B3B;
     font-size: 12px;
-    text-align: center;
-    flex-shrink: 0;
 }
-
-/* Informações */
 
 .dadosVaga {
     display: flex;
@@ -518,63 +455,364 @@ main.dashboardOportunidade {
 }
 
 .dadosVaga > strong {
-    overflow: hidden;
-    color: #3B0B3B;
     font-size: 14px;
     font-weight: 600;
-    line-height: 1.2;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .dadosVaga > small {
     margin-top: 4px;
-    color: #3B0B3B;
     font-size: 12px;
-    line-height: 1.2;
 }
-
-/* Etiquetas */
 
 .etiquetas {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 5px;
     margin-top: 5px;
 }
 
 .etiquetas small {
-    padding: 1px 7px;
+    padding: 2px 8px;
     border-radius: 9px;
-    background-color: #BFA3E0;
-    color: #3B0B3B;
+    background: #BFA3E0;
     font-size: 10px;
-    line-height: 1.3;
-    white-space: nowrap;
 }
 
 .etiquetas small + small {
-    background-color: #903963;
-    color: #FFFFFF;
+    background: #903963;
+    color: #FFF;
 }
-
-/* Seta da vaga */
 
 .setaVaga {
     margin: 3px 1px 0 0;
-    color: #3B0B3B;
     font-size: 14px;
-    flex-shrink: 0;
 }
 
-/* =====================================================
-   RESPONSIVIDADE
-===================================================== */
+/* PÁGINAS E LISTAGENS */
+
+.paginaOportunidade[hidden] {
+    display: none !important;
+}
+
+.paginaListagem {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 35px;
+}
+
+.voltarOportunidades {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 22px;
+    padding: 8px 0;
+    border: 0;
+    background: transparent;
+    color: #903963;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.tituloListagem {
+    margin-bottom: 20px;
+}
+
+.categoriaListagem {
+    color: #903963;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.tituloListagem h2 {
+    margin: 5px 0;
+    color: #3B0B3B;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.tituloListagem p {
+    color: #76516F;
+    font-size: 12px;
+}
+
+.pesquisaListagem {
+    width: 100%;
+    max-width: 620px;
+    height: 45px;
+    margin-bottom: 22px;
+    background: #FFF;
+}
+
+/* FILTROS */
+
+.filtrosListagem {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.grupoFiltros {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.grupoFiltros > strong {
+    min-width: 85px;
+    color: #3B0B3B;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.listaTagsFiltro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tagFiltro {
+    padding: 9px 17px;
+    border: 0;
+    border-radius: 22px;
+    background: #F2CBE4;
+    color: #3B0B3B;
+    font-family: inherit;
+    font-size: 11px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.tagFiltro:hover,
+.tagFiltro.selecionada {
+    background: #903963;
+    color: #FFF;
+}
+
+/* GRADE DE CARDS */
+
+.gradeOportunidades {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.cardOportunidade {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #F0D5E7;
+    border-radius: 14px;
+    background: #FFF;
+    box-shadow: 0 3px 10px rgba(59, 11, 59, .06);
+    transition: transform .2s, box-shadow .2s;
+}
+
+.cardOportunidade:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 17px rgba(59, 11, 59, .11);
+}
+
+.areaCardOportunidade {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #3B0B3B;
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.imagemCardOportunidade {
+    display: flex;
+    width: 100%;
+    height: 145px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #F2E5F0;
+    color: #903963;
+    font-size: 35px;
+}
+
+.imagemCardOportunidade img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imagemLogoEmpresa {
+    height: 110px;
+    background: #F2CBE4;
+}
+
+.imagemLogoEmpresa span {
+    display: flex;
+    width: 58px;
+    height: 58px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: #903963;
+    color: #FFF;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.conteudoCardOportunidade {
+    display: flex;
+    width: 100%;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.tagsCard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.tagsCard span {
+    padding: 4px 9px;
+    border-radius: 15px;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.tagTema {
+    background: #E2CEF0;
+    color: #3B0B3B;
+}
+
+.tagGratuito {
+    background: #DDEBDD;
+    color: #285B35;
+}
+
+.tagPago,
+.tagTipoVaga {
+    background: #903963;
+    color: #FFF;
+}
+
+.conteudoCardOportunidade h3 {
+    margin-bottom: 5px;
+    color: #3B0B3B;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.instituicaoCard {
+    margin-bottom: 9px;
+    color: #903963;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.descricaoCard {
+    display: -webkit-box;
+    min-height: 58px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    color: #76516F;
+    font-size: 11px;
+    line-height: 1.6;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.detalhesCard {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: auto;
+    color: #903963;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* RESULTADOS POR TEMA */
+
+.secaoResultadosTema {
+    grid-column: 1 / -1;
+    min-width: 0;
+    margin-bottom: 12px;
+}
+
+.cabecalhoResultadosTema {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 8px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EBD3E2;
+}
+
+.cabecalhoResultadosTema h3 {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #3B0B3B;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.cabecalhoResultadosTema h3 i {
+    color: #903963;
+}
+
+.quantidadeResultados {
+    color: #76516F;
+    font-size: 11px;
+}
+
+.gradeResultadosTema {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.mensagemCategoriaVazia {
+    grid-column: 1 / -1;
+    padding: 20px;
+    border-radius: 12px;
+    background: #F8EAF3;
+    color: #76516F;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* MENSAGEM SEM RESULTADOS */
+
+.mensagemSemResultados {
+    padding: 35px 15px;
+    color: #76516F;
+    text-align: center;
+    font-size: 13px;
+}
+
+.mensagemSemResultados[hidden] {
+    display: none;
+}
+
+/* RESPONSIVIDADE */
 
 @media (max-width: 1200px) {
-
     .dashboardOportunidade .conteudoOportunidade {
-        padding: 25px 25px 12px;
+        padding: 25px;
     }
 
     .gradeAcessos {
@@ -589,7 +827,6 @@ main.dashboardOportunidade {
 
     .mulherOportunidade {
         width: 200px;
-        margin-left: 25px;
     }
 
     .textoBanner h2 {
@@ -600,36 +837,16 @@ main.dashboardOportunidade {
         font-size: 13px;
     }
 
-    .cardCursos,
-    .cardVagas {
-        padding: 17px;
-    }
-
-    .cursoDestaque > img {
-        width: 115px;
-        height: 100px;
-    }
-
-    .cardAcesso {
-        height: 170px;
-        min-height: 170px;
-        padding: 19px 9px 13px;
-    }
-
-    .cardAcesso h3 {
-        font-size: 11px;
-    }
-
-    .cardAcesso p {
-        font-size: 9px;
+    .gradeOportunidades,
+    .gradeResultadosTema {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 850px) {
-
     .dashboardOportunidade .conteudoOportunidade {
         min-height: calc(100vh - 70px);
-        padding: 20px 20px 12px;
+        padding: 20px;
     }
 
     .dashboardOportunidade .ramoSuperior {
@@ -647,7 +864,6 @@ main.dashboardOportunidade {
     .mulherOportunidade {
         width: 165px;
         height: 145px;
-        margin-left: 15px;
         margin-top: -25px;
     }
 
@@ -670,8 +886,7 @@ main.dashboardOportunidade {
     }
 
     .cardAcesso {
-        height: 165px;
-        min-height: 165px;
+        min-height: 155px;
     }
 
     .cardAcesso h3 {
@@ -685,32 +900,11 @@ main.dashboardOportunidade {
     .painelInferior {
         grid-template-columns: 1fr;
     }
-
-    .cardCursos,
-    .cardVagas {
-        height: 215px;
-    }
-
-    .cardVagas {
-        min-height: 215px;
-        max-height: 215px;
-        padding: 17px;
-    }
-
-    .cardVagas .cabecalhoCard {
-        margin-bottom: 10px;
-    }
-
-    .cardVagas .listaVagas {
-        justify-content: space-evenly;
-        gap: 0;
-    }
 }
 
 @media (max-width: 600px) {
-
     .dashboardOportunidade .conteudoOportunidade {
-        padding: 20px 15px 10px;
+        padding: 20px 15px;
     }
 
     .cabecalhoOportunidade {
@@ -721,7 +915,6 @@ main.dashboardOportunidade {
 
     .barraPesquisa {
         width: 100%;
-        max-width: 100%;
     }
 
     .bannerOportunidade {
@@ -731,8 +924,6 @@ main.dashboardOportunidade {
     .mulherOportunidade {
         width: 115px;
         height: 145px;
-        margin-left: 4px;
-        margin-top: -15px;
     }
 
     .textoBanner {
@@ -751,37 +942,9 @@ main.dashboardOportunidade {
         font-size: 35px;
     }
 
-    .dashboardOportunidade .ramoSuperior {
-        width: 65px;
-    }
-
-    .dashboardOportunidade .ramoInferior {
-        width: 90px;
-    }
-
     .gradeAcessos {
         grid-template-columns: repeat(5, 115px);
         gap: 10px;
-    }
-
-    .cardAcesso {
-        height: 155px;
-        min-height: 155px;
-        padding: 16px 9px 12px;
-    }
-
-    .iconeAcesso {
-        font-size: 21px;
-        min-height: 29px;
-    }
-
-    .cardAcesso h3 {
-        font-size: 10px;
-        margin-bottom: 8px;
-    }
-
-    .cardAcesso p {
-        font-size: 9px;
     }
 
     .painelInferior {
@@ -793,11 +956,11 @@ main.dashboardOportunidade {
         padding: 16px;
     }
 
-    .cursoDestaque {
+    .cursoDestaqueBotao {
         gap: 12px;
     }
 
-    .cursoDestaque > img {
+    .imagemDestaqueCurso {
         width: 100px;
         height: 90px;
     }
@@ -810,78 +973,31 @@ main.dashboardOportunidade {
         font-size: 10px;
     }
 
-    .cardVagas .cabecalhoCard {
-        margin-bottom: 10px;
+    .gradeOportunidades,
+    .gradeResultadosTema {
+        grid-template-columns: 1fr;
     }
 
-    .cardVagas .listaVagas {
-        justify-content: space-evenly;
-        gap: 0;
+    .tituloListagem h2 {
+        font-size: 21px;
     }
 
-    .cardVagas .dadosVaga > strong {
+    .grupoFiltros {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .listaTagsFiltro {
+        gap: 6px;
+    }
+
+    .tagFiltro {
+        padding: 8px 13px;
         font-size: 10px;
     }
 
-    .cardVagas .dadosVaga > small {
-        font-size: 8px;
+    .cabecalhoResultadosTema h3 {
+        font-size: 16px;
     }
-
-    .cardVagas .etiquetas small {
-        font-size: 7px;
-    }
-}
-
-@media (max-width: 400px) {
-
-    .cardCursos,
-    .cardVagas {
-        padding: 13px;
-    }
-
-    .cursoDestaque {
-        gap: 10px;
-    }
-
-    .cursoDestaque > img {
-        width: 82px;
-        height: 75px;
-    }
-
-    .cardVagas .itemVaga {
-        gap: 7px;
-    }
-
-    .cardVagas .dadosVaga > strong {
-        font-size: 9px;
-    }
-
-    .cardVagas .dadosVaga > small {
-        font-size: 7px;
-    }
-}
-
-/* Paleta do Figma aplicada somente à DashboardOportunidade */
-.dashboardOportunidade {
-    color: #3B0B3B;
-}
-
-.dashboardOportunidade .barraLateral {
-    background-color: #903963;
-}
-
-.dashboardOportunidade .itemNavegacao:hover,
-.dashboardOportunidade .itemNavegacao.ativo {
-    background-color: #F2CBE4;
-    color: #3B0B3B;
-}
-
-.dashboardOportunidade .recado {
-    background-color: #F2CBE4;
-    color: #000000;
-}
-
-.dashboardOportunidade .avatar {
-    background-color: #BFA3E0;
-    color: #FFFFFF;
 }

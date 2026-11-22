@@ -486,6 +486,160 @@
     pointer-events: none;
 }
 
+
+
+/* ==========================================================
+   CONTROLES INTERATIVOS DOS CARDS DA COMUNIDADE
+========================================================== */
+
+/* Remove a aparência padrão dos botões */
+.linkComunidade,
+.botaoGrupo,
+.botaoEvento,
+.botaoHistoria {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Botões "Ver todos" */
+.linkComunidade {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    padding: 0;
+
+    background: transparent;
+    color: #3B0B3B;
+
+    font-size: 10px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.linkComunidade:hover {
+    color: #903963;
+    background: transparent;
+}
+
+.linkComunidade:focus,
+.linkComunidade:active {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Botões dos grupos */
+.botaoGrupo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    width: 100%;
+    margin-top: auto;
+    padding: 8px 6px;
+
+    border-radius: 20px;
+    background-color: #903963;
+    color: white;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+.botaoGrupo:hover {
+    background-color: #3B0B3B;
+}
+
+/* Botão dos eventos */
+.botaoEvento {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+    background-color: #903963;
+    color: white;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+.botaoEvento:hover {
+    background-color: #3B0B3B;
+}
+
+/* Botão de criar publicação */
+.botaoHistoria {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+    background-color: #903963;
+    color: white;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+.botaoHistoria:hover {
+    background-color: #3B0B3B;
+}
+
+/* Publicações clicáveis */
+.publicacao[role="button"] {
+    width: 100%;
+
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+
+    background: transparent;
+    box-shadow: none;
+
+    text-align: left;
+    font-family: inherit;
+
+    cursor: pointer;
+}
+
+.publicacao[role="button"]:focus {
+    outline: 2px solid #903963;
+    outline-offset: 2px;
+}
+
+/* Evita bordas brancas no foco dos botões */
+.linkComunidade:focus-visible,
+.botaoGrupo:focus-visible,
+.botaoEvento:focus-visible,
+.botaoHistoria:focus-visible {
+    outline: 2px solid #903963;
+    outline-offset: 3px;
+}
+
+
+
 @media (max-width: 1200px) {
 
     .barraLateralComunidade {
