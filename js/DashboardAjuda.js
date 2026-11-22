@@ -9,6 +9,7 @@
 
     const STORAGE_FAVORITES = "eloAjuda_favoritos";
     const STORAGE_COMPLETED = "eloAjuda_finalizados";
+    const STORAGE_RATINGS = "eloAjuda_avaliacoes";
 
     // ==========================================
     // BANCO DE TUTORIAIS
@@ -641,8 +642,27 @@
         }
     };
 
+    const readRatings = () => {
+        try {
+            const value = JSON.parse(localStorage.getItem(STORAGE_RATINGS) || "{}");
+
+            if (!value || typeof value !== "object" || Array.isArray(value)) {
+                return {};
+            }
+
+            return Object.fromEntries(
+                Object.entries(value).filter(([, rating]) =>
+                    Number.isInteger(rating) && rating >= 1 && rating <= 5
+                )
+            );
+        } catch {
+            return {};
+        }
+    };
+
     let favorites = readStorage(STORAGE_FAVORITES);
     let completed = readStorage(STORAGE_COMPLETED);
+    let ratings = readRatings();
 
     let currentOverlay = null;
     let lastFocusedElement = null;
@@ -664,6 +684,7 @@
     const saveState = () => {
         localStorage.setItem(STORAGE_FAVORITES, JSON.stringify(favorites));
         localStorage.setItem(STORAGE_COMPLETED, JSON.stringify(completed));
+        localStorage.setItem(STORAGE_RATINGS, JSON.stringify(ratings));
 
         updateDashboard();
     };
@@ -921,10 +942,8 @@
         if (!body) return;
 
         const searchInput = body.querySelector(".modalBusca");
-        const categorySelect = body.querySelector(".modalCategoria");
-
         const search = searchInput?.value || "";
-        const selectedCategory = categorySelect?.value || "";
+        const selectedCategory = body.dataset.categoryFilter || "";
 
         let items = [...tutorials];
 
@@ -961,12 +980,20 @@
 
         // Filtro de categoria
 
-        if (selectedCategory) {
+        const categoryMatchers = {
+            casa: /casa|alimentacao|organizacao/i,
+            tecnologia: /tecnologia/i,
+            logistica: /logistica/i,
+            "inteligencia-artificial": /inteligencia artificial/i,
+            saude: /saude|bem-estar/i,
+            negocios: /empreendedorismo|financas|negocios/i,
+            carreira: /trabalho|carreira/i
+        };
 
+        if (categoryMatchers[selectedCategory]) {
             items = items.filter(item =>
-                item.category === selectedCategory
+                categoryMatchers[selectedCategory].test(normalizeText(item.category))
             );
-
         }
 
         // Pesquisa por texto
@@ -1100,8 +1127,7 @@
 
     const renderList = (mode, body) => {
 
-        const categories = getCategories();
-
+        body.dataset.categoryFilter = "";
         body.innerHTML = `
 
             <div class="modalFerramentas">
@@ -1112,21 +1138,16 @@
                     placeholder="Buscar tutorial por tema..."
                     aria-label="Buscar tutorial">
 
-                <select
-                    class="modalCategoria"
-                    aria-label="Filtrar por categoria">
-
-                    <option value="">Todas as categorias</option>
-
-                    ${categories.map(category => `
-
-                        <option value="${escapeHTML(category)}">
-                            ${escapeHTML(category)}
-                        </option>
-
-                    `).join("")}
-
-                </select>
+                <div class="modalFiltrosTags" role="group" aria-label="Filtrar tutoriais por tema">
+                    <button type="button" class="modalTagFiltro ativo" data-category-filter="">Todos</button>
+                    <button type="button" class="modalTagFiltro" data-category-filter="casa">Casa</button>
+                    <button type="button" class="modalTagFiltro" data-category-filter="tecnologia">Tecnologia</button>
+                    <button type="button" class="modalTagFiltro" data-category-filter="logistica">Logística</button>
+                    <button type="button" class="modalTagFiltro" data-category-filter="inteligencia-artificial">Inteligência Artificial</button>
+                    <button type="button" class="modalTagFiltro" data-category-filter="saude">Saúde e Bem Estar</button>
+                    <button type="button" class="modalTagFiltro" data-category-filter="negocios">Negócios</button>
+                    <button type="button" class="modalTagFiltro" data-category-filter="carreira">Trabalho e Carreira</button>
+                </div>
 
                 <span class="modalContagem">
                     0 tutoriais encontrados
@@ -1139,8 +1160,6 @@
         `;
 
         const searchInput = body.querySelector(".modalBusca");
-        const categorySelect = body.querySelector(".modalCategoria");
-
         // Pesquisa em tempo real sem recriar o input
 
         searchInput.addEventListener("input", () => {
@@ -1151,15 +1170,20 @@
 
         // Filtro de categoria
 
-        categorySelect.addEventListener("change", () => {
-
-            updateListResults(mode, body);
-
-        });
-
         // Abrir tutorial e favoritar usando delegação de eventos
 
         body.addEventListener("click", event => {
+
+            const categoryButton = event.target.closest("[data-category-filter]");
+
+            if (categoryButton) {
+                body.dataset.categoryFilter = categoryButton.dataset.categoryFilter;
+                body.querySelectorAll("[data-category-filter]").forEach(button => {
+                    button.classList.toggle("ativo", button === categoryButton);
+                });
+                updateListResults(mode, body);
+                return;
+            }
 
             const readButton = event.target.closest("[data-read]");
 
@@ -1342,6 +1366,33 @@
 
                 </div>
 
+                <section class="artigoAvaliacao ${completed.includes(item.id) ? "" : "bloqueada"}" aria-labelledby="artigoAvaliacaoTitulo">
+                        <h3 id="artigoAvaliacaoTitulo">Avalie este tutorial</h3>
+                        <p>Como foi sua experiência com este conteúdo?</p>
+
+                        <div class="avaliacaoEstrelas" role="group" aria-label="Avaliação de 1 a 5 estrelas">
+                            ${[1, 2, 3, 4, 5].map(rating => `
+                                <button
+                                    type="button"
+                                    class="botaoEstrelaAvaliacao ${ratings[item.id] >= rating ? "selecionada" : ""}"
+                                    data-rate-tutorial="${item.id}"
+                                    data-rating="${rating}"
+                                    aria-label="${rating} ${rating === 1 ? "estrela" : "estrelas"}"
+                                    aria-pressed="${ratings[item.id] === rating}"
+                                    ${completed.includes(item.id) ? "" : "disabled"}>
+                                    <i class="fa-${ratings[item.id] >= rating ? "solid" : "regular"} fa-star" aria-hidden="true"></i>
+                                </button>
+                            `).join("")}
+                        </div>
+
+                        <p class="statusAvaliacao" data-rating-status aria-live="polite">
+                            ${ratings[item.id]
+                                ? `Sua avaliação: ${ratings[item.id]} de 5 estrelas.`
+                                : completed.includes(item.id)
+                                    ? "Escolha de 1 a 5 estrelas."
+                                    : "Finalize o tutorial para avaliar."}
+                        </p>
+                    </section>
                 <p class="artigoAviso">
 
                     Este conteúdo é informativo e pode não substituir orientação profissional.
@@ -1373,16 +1424,70 @@
             "click",
             () => {
 
-                completed = completed.includes(item.id)
+                const isCompleted = completed.includes(item.id);
+                completed = isCompleted
                     ? completed.filter(value => value !== item.id)
                     : [...completed, item.id];
 
                 saveState();
 
-                openArticle(item.id);
+                const completeButton = body.querySelector("[data-complete]");
+                completeButton.innerHTML = `
+                    <i class="fa-solid fa-check"></i>
+                    ${isCompleted ? "Marcar como finalizado" : "Marcar como não concluído"}
+                `;
+
+                const ratingSection = body.querySelector(".artigoAvaliacao");
+                const ratingGroup = body.querySelector(".avaliacaoEstrelas");
+                const ratingStatus = body.querySelector("[data-rating-status]");
+                const ratingButtons = body.querySelectorAll("[data-rate-tutorial]");
+
+                ratingSection.classList.toggle("bloqueada", isCompleted);
+                ratingGroup.setAttribute("aria-disabled", String(isCompleted));
+                ratingButtons.forEach(ratingButton => {
+                    ratingButton.disabled = isCompleted;
+                });
+
+                if (ratingStatus && !ratings[item.id]) {
+                    ratingStatus.textContent = isCompleted
+                        ? "Finalize o tutorial para avaliar."
+                        : "Escolha de 1 a 5 estrelas.";
+                }
 
             }
         );
+
+        body.querySelectorAll("[data-rate-tutorial]").forEach(button => {
+            button.addEventListener("click", () => {
+                const selectedRating = Number(button.dataset.rating);
+
+                ratings[item.id] = selectedRating;
+                saveState();
+
+                body.querySelectorAll("[data-rate-tutorial]").forEach(starButton => {
+                    const starRating = Number(starButton.dataset.rating);
+                    const starIsFilled = starRating <= selectedRating;
+                    const icon = starButton.querySelector("i");
+
+                    starButton.classList.toggle("selecionada", starIsFilled);
+                    starButton.setAttribute(
+                        "aria-pressed",
+                        String(starRating === selectedRating)
+                    );
+
+                    if (icon) {
+                        icon.classList.toggle("fa-solid", starIsFilled);
+                        icon.classList.toggle("fa-regular", !starIsFilled);
+                    }
+                });
+
+                const status = body.querySelector("[data-rating-status]");
+
+                if (status) {
+                    status.textContent = `Sua avaliação: ${selectedRating} de 5 estrelas.`;
+                }
+            });
+        });
 
     };
 

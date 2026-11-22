@@ -102,15 +102,16 @@ body.modalAberto {
 
 .modalFerramentas {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
     gap: 12px;
-    flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
 .modalBusca {
-    flex: 1 1 220px;
+    flex: 0 0 auto;
     min-width: 0;
+    width: 100%;
     height: 43px;
     padding: 0 15px;
     border: 1px solid #E4C3D8;
@@ -120,6 +121,36 @@ body.modalAberto {
     color: #3B0B3B;
     font: inherit;
     font-size: 12px;
+}
+
+.modalFiltrosTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.modalTagFiltro {
+    min-height: 34px;
+    padding: 7px 13px;
+    border: 0;
+    border-radius: 20px;
+    background: #F2CBE4;
+    color: #3B0B3B;
+    font: inherit;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.modalTagFiltro:hover,
+.modalTagFiltro.ativo {
+    background: #903963;
+    color: #FFF;
+}
+
+.modalTagFiltro:focus-visible {
+    outline: 3px solid #BFA3E0;
+    outline-offset: 2px;
 }
 
 .modalBusca:focus {
@@ -380,6 +411,81 @@ body.modalAberto {
     display: flex;
     gap: 9px;
     flex-wrap: wrap;
+}
+
+.artigoAvaliacao {
+    margin: 22px 0;
+    padding: 16px 18px;
+    border: 1px solid #EBD5E4;
+    border-radius: 14px;
+    background: #FFF;
+}
+
+.artigoAvaliacao.bloqueada {
+    background: #FAF7F9;
+}
+
+.artigoAvaliacao h3 {
+    margin: 0 0 6px;
+    color: #3B0B3B;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.artigoAvaliacao > p:first-of-type {
+    margin: 0 0 10px;
+    color: #65465F;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.avaliacaoEstrelas {
+    display: flex;
+    gap: 5px;
+}
+
+.botaoEstrelaAvaliacao {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #C9B7C3;
+    font-size: 22px;
+    cursor: pointer;
+    transition: color .2s ease, transform .2s ease, background .2s ease;
+}
+
+.botaoEstrelaAvaliacao:hover,
+.botaoEstrelaAvaliacao.selecionada {
+    color: #D59B27;
+}
+
+.botaoEstrelaAvaliacao:hover {
+    transform: translateY(-1px);
+}
+
+.botaoEstrelaAvaliacao:disabled {
+    color: #D8CDD5;
+    cursor: not-allowed;
+}
+
+.botaoEstrelaAvaliacao:disabled:hover {
+    transform: none;
+}
+
+.botaoEstrelaAvaliacao:focus-visible {
+    outline: 3px solid #BFA3E0;
+    outline-offset: 2px;
+}
+
+.statusAvaliacao {
+    min-height: 18px;
+    margin: 7px 0 0;
+    color: #76506D;
+    font-size: 11px;
 }
 
 .artigoAviso {
@@ -664,15 +770,16 @@ button.linkCard[data-open-list="all"]:active {
 
 .modalFerramentas {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
     gap: 12px;
-    flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
 .modalBusca {
-    flex: 1 1 220px;
-    min-width: 180px;
+    flex: 0 0 auto;
+    width: min(100%, 720px);
+    min-width: 0;
     height: 43px;
     padding: 0 15px;
     border: 1px solid #E4C3D8;
@@ -682,6 +789,7 @@ button.linkCard[data-open-list="all"]:active {
     color: #3B0B3B;
     font: inherit;
     font-size: 12px;
+    box-sizing: border-box;
 }
 
 .modalBusca:focus {
@@ -689,35 +797,11 @@ button.linkCard[data-open-list="all"]:active {
     box-shadow: 0 0 0 3px rgba(144, 57, 99, .12);
 }
 
-.modalCategoria {
-    flex: 0 1 220px;
-    min-width: 180px;
-    height: 43px;
-    padding: 0 35px 0 13px;
-    border: 1px solid #E4C3D8;
-    border-radius: 12px;
-    outline: none;
-    background-color: #FFFFFF;
-    color: #3B0B3B;
-    font-family: 'Poppins', sans-serif;
-    font-size: 11px;
-    cursor: pointer;
-}
-
-.modalCategoria:focus {
-    border-color: #903963;
-    box-shadow: 0 0 0 3px rgba(144, 57, 99, .12);
-}
-
-.modalCategoria option {
-    background: #FFFFFF;
-    color: #3B0B3B;
-}
-
 .modalContagem {
     flex: 0 0 auto;
     color: #76506D;
     font-size: 11px;
+    text-align: left;
 }
 
 /* ==========================================
@@ -730,11 +814,10 @@ button.linkCard[data-open-list="all"]:active {
         flex-direction: column;
     }
 
-    .modalBusca,
-    .modalCategoria {
+    .modalBusca {
         width: 100%;
         min-width: 0;
-        flex: 1 1 auto;
+        flex: 0 0 auto;
     }
 
     .modalContagem {

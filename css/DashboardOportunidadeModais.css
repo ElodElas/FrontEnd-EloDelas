@@ -27,9 +27,9 @@ body.modalOportunidadeAberto {
     padding: 24px;
     box-sizing: border-box;
 
-    background: rgba(35, 12, 32, .65);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    background: rgba(35, 12, 32, .62);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 
     opacity: 0;
     visibility: hidden;
@@ -54,7 +54,7 @@ body.modalOportunidadeAberto {
     display: flex;
     flex-direction: column;
 
-    width: min(900px, 100%);
+    width: min(1050px, 100%);
     max-height: min(88vh, 900px);
 
     padding: 0;
@@ -66,7 +66,7 @@ body.modalOportunidadeAberto {
     background: #FDF5FB;
     color: #3B0B3B;
 
-    box-shadow: 0 20px 70px rgba(24, 5, 24, .30);
+    box-shadow: 0 20px 70px rgba(24, 5, 24, .28);
 
     transform: translateY(18px) scale(.98);
 
@@ -147,7 +147,7 @@ body.modalOportunidadeAberto {
 
     flex-shrink: 0;
 
-    padding: 27px 75px 23px 32px;
+    padding: 27px 75px 22px 32px;
 
     background: linear-gradient(
         120deg,
@@ -260,7 +260,7 @@ body.modalOportunidadeAberto {
     flex: 1;
     min-height: 0;
 
-    padding: 27px 32px 32px;
+    padding: 25px 30px 30px;
 
     overflow-y: auto;
     overflow-x: hidden;
@@ -354,6 +354,11 @@ body.modalOportunidadeAberto {
     height: 155px;
 }
 
+.imagemLogoModal img {
+    padding: 20px;
+    object-fit: contain;
+}
+
 .imagemLogoModal span {
     width: 82px;
     height: 82px;
@@ -391,6 +396,20 @@ body.modalOportunidadeAberto {
     line-height: 1.8;
 
     white-space: pre-line;
+}
+
+.listaDetalhesModal {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding-left: 21px;
+    color: #62445E;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.listaDetalhesModal li::marker {
+    color: #903963;
 }
 
 /* ==========================================================
@@ -521,19 +540,20 @@ body.modalOportunidadeAberto {
 
 @media (max-width: 760px) {
     .modalOverlayOportunidades {
-        padding: 18px;
+        padding: 10px;
     }
 
     .modalOportunidade {
-        max-height: 90vh;
+        max-height: 94vh;
+        border-radius: 17px;
     }
 
     .topoModalOportunidade {
-        padding: 25px 65px 21px 25px;
+        padding: 23px 65px 18px 20px;
     }
 
     .corpoModalOportunidade {
-        padding: 24px 25px 27px;
+        padding: 18px;
     }
 
     .topoModalOportunidade h2 {
@@ -551,28 +571,22 @@ body.modalOportunidadeAberto {
 
 @media (max-width: 600px) {
     .modalOverlayOportunidades {
-        align-items: flex-end;
-
-        padding: 0;
+        align-items: center;
     }
 
     .modalOportunidade {
         width: 100%;
         max-width: none;
 
-        max-height: 93vh;
-
-        border-radius: 21px 21px 0 0;
-
-        transform: translateY(30px);
+        transform: translateY(18px) scale(.98);
     }
 
     .modalOverlayOportunidades.aberto .modalOportunidade {
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
 
     .topoModalOportunidade {
-        padding: 24px 58px 20px 21px;
+        padding: 23px 58px 18px 20px;
     }
 
     .topoModalOportunidade h2 {
@@ -598,7 +612,7 @@ body.modalOportunidadeAberto {
     }
 
     .corpoModalOportunidade {
-        padding: 21px 20px 27px;
+        padding: 18px;
     }
 
     .imagemModalOportunidade {
@@ -621,6 +635,10 @@ body.modalOportunidadeAberto {
     }
 
     .secaoDescricaoModal p {
+        font-size: 14px;
+    }
+
+    .listaDetalhesModal {
         font-size: 14px;
     }
 
@@ -670,10 +688,6 @@ body.modalOportunidadeAberto {
         font-size: 13px;
     }
 
-    .corpoModalOportunidade {
-        padding: 18px 16px 23px;
-    }
-
     .imagemModalOportunidade {
         height: 145px;
     }
@@ -684,6 +698,10 @@ body.modalOportunidadeAberto {
     }
 
     .secaoDescricaoModal p {
+        font-size: 13px;
+    }
+
+    .listaDetalhesModal {
         font-size: 13px;
     }
 

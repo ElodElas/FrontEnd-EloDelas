@@ -38,6 +38,7 @@ main.dashboardOportunidade {
 
 .dashboardOportunidade .conteudoOportunidade {
     position: relative;
+    isolation: isolate;
     flex: 1 1 0;
     width: auto;
     max-width: none;
@@ -62,13 +63,18 @@ main.dashboardOportunidade {
 .dashboardOportunidade .ramoSuperior {
     top: 0;
     right: 0;
-    width: 115px;
+    width: 180px;
 }
 
 .dashboardOportunidade .ramoInferior {
     bottom: 0;
     left: 0;
-    width: 145px;
+    width: 225px;
+}
+
+.dashboardOportunidade .paginaOportunidade {
+    position: relative;
+    z-index: 1;
 }
 
 /* CABEÇALHO */
@@ -102,7 +108,6 @@ main.dashboardOportunidade {
 
 /* PESQUISA */
 
-.barraPesquisa,
 .pesquisaListagem {
     display: flex;
     align-items: center;
@@ -117,13 +122,11 @@ main.dashboardOportunidade {
     color: #903963;
 }
 
-.barraPesquisa:focus-within,
 .pesquisaListagem:focus-within {
     border-color: #903963;
     box-shadow: 0 0 0 3px rgba(144, 57, 99, .08);
 }
 
-.barraPesquisa input,
 .pesquisaListagem input {
     width: 100%;
     min-width: 0;
@@ -347,6 +350,11 @@ main.dashboardOportunidade {
 }
 
 /* DESTAQUE DE CURSO */
+
+#cursoDestaque {
+    display: flex;
+    flex: 1;
+}
 
 .cursoDestaqueBotao {
     display: flex;
@@ -653,6 +661,11 @@ main.dashboardOportunidade {
     background: #F2CBE4;
 }
 
+.imagemLogoEmpresa img {
+    padding: 13px;
+    object-fit: contain;
+}
+
 .imagemLogoEmpresa span {
     display: flex;
     width: 58px;
@@ -850,11 +863,11 @@ main.dashboardOportunidade {
     }
 
     .dashboardOportunidade .ramoSuperior {
-        width: 85px;
+        width: 135px;
     }
 
     .dashboardOportunidade .ramoInferior {
-        width: 110px;
+        width: 165px;
     }
 
     .bannerOportunidade {
@@ -911,10 +924,6 @@ main.dashboardOportunidade {
         align-items: flex-start;
         flex-direction: column;
         margin-bottom: 20px;
-    }
-
-    .barraPesquisa {
-        width: 100%;
     }
 
     .bannerOportunidade {
@@ -1000,4 +1009,27 @@ main.dashboardOportunidade {
     .cabecalhoResultadosTema h3 {
         font-size: 16px;
     }
+}
+
+/* A navegação permanece na viewport; somente o painel da direita rola. */
+main.dashboardOportunidade {
+    height: 100vh;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.dashboardOportunidade .barraLateral {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: 100vh;
+    min-height: 0;
+}
+
+.dashboardOportunidade .conteudoOportunidade {
+    height: 100vh;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
 }
