@@ -116,7 +116,7 @@
                 option.type = "button";
                 option.className = "buscaMapaOpcao";
                 option.setAttribute("role", "option");
-                option.dataset.locationIndex = String(index);
+                option.dataset.locationindex = String(index);
                 option.textContent = place.label || place.display_name;
                 results.appendChild(option);
             });
@@ -193,7 +193,7 @@
             const option = event.target.closest("[data-location-index]");
             if (!option) return;
 
-            const place = locations[Number(option.dataset.locationIndex)];
+            const place = locations[Number(option.dataset.locationindex)];
             if (!place) return;
 
             results.hidden = true;
