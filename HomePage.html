@@ -58,11 +58,15 @@
             </div>
         </section>
 
-        <button onclick="goTop()" id="btn-top" title="Voltar ao Topo">
+        <button onclick="goTop()" id="btn-top">
             <i class="fa-solid fa-angles-up"></i>
         </button>
 
         <section class="about-section" id="about">
+            <img src="img/Ramo Inverso.png" alt="Ramo decorativo no canto superior esquerdo" class="branch top-left">
+            <img src="img/Ramo baixo.png" alt="Ramo decorativo no canto inferior esquerdo" class="branch bottom-left">
+            <img src="img/Ramo Topo.png" alt="Ramo decorativo à direita" class="branch right">
+
             <div class="title">
                 <h1>Quem é o</h1>
                 <img src="./img/HomePage/LogoLetters.png" alt="Logo Letras Elo d'Elas">
@@ -96,7 +100,7 @@
                 <p>Descubra tudo o que podemos construir juntas.</p>
 
                 <div class="arrow-down">
-                    <a href="#">
+                    <a href="">
                         <i class="fa-solid fa-angles-down"></i>
                     </a>
                 </div>
@@ -104,9 +108,98 @@
         </section>
 
         <section class="contributor-section">
+            <img src="img/HomePage/Dois Ramos.png" alt="Ramo decorativo no canto superior esquerdo" class="branch top">
+            <img src="img/Ramo baixo.png" alt="Ramo decorativo no canto inferior esquerdo" class="branch left">
+            <img src="img/Ramo Topo.png" alt="Ramo decorativo no canto inferior direito" class="branch bottom-right">
 
+            <div class="texts-container">
+                <div class="title">
+                    <h1>Seja um colaborador</h1>
+                    <img src="./img/HomePage/LogoLettersAlternative.png" alt="Logo Letras Elo d'Elas">
+                </div>
+                <p>Apoie nossa iniciativa ou descubra novas possibilidades para seu desenvolvimento</p>
+
+                <div>
+                    <p>Outras formas de contribuir?</p>
+                    <p><a href="#">Fale com a equipe</a></p>
+                </div>
+            </div>
+
+            <div class="boxes-container">
+                <div class="box">
+                    <div class="icon">
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+                    <h3>GRATUITO</h3>
+                    <p>Funcionalidades essênciais para começar</p>
+                    <div class="field">
+                        <p>Seu espaço para crescer</p>
+                    </div>
+                    <button onclick="window.location.href='#'">Começar</button>
+                </div>
+
+                <div class="box">
+                    <div class="icon">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3>ELO+</h3>
+                    <p>Mais Ferramentas para seu desenvolvimento</p>
+                    <div class="field">
+                        <p>Experimente recursos exclusivos</p>
+                    </div>
+                    <button onclick="window.location.href='#'">Assinar</button>
+                </div>
+
+                <div class="box">
+                    <div class="icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3>DOAÇÃO</h3>
+                    <p>Juntas, podemos transformar mais histórias</p>
+                    <div class="field">
+                        <p>Contribue com o valor que quiser</p>
+                    </div>
+                    <button onclick="window.location.href='#'">Quero doar</button>
+                </div>
+            </div>
         </section>
     </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="logo-footer">
+                <a href="#"><img src="./img/LogoNegativa.png" alt="Logo Elo d'Elas cor Negativa"></a>
+                <p>Acolher para florescer. Unir para fortalecer.</p>
+            </div>
+            <nav class="links-footer">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                </ul>
+            </nav>
+            
+            <nav class="talk-footer">
+                <h3>Fale Conosco</h3>
+                <ul>
+                    <li>
+                        <p>Atendimento: Segunda a Sexta, das 8h às 20h</p>
+                    </li>
+                    <li>
+                        <p>Email: contato@ElodElas.com.br</p>
+                    </li>
+                    <li>WhatsApp / Telefone: (11) 99999-9999</li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="dues">
+            <hr>
+            <p>Elo d'Elas © Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
     <script src="./js/HomePage.js"></script>
 </body>
