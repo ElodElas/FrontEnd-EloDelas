@@ -361,6 +361,7 @@ main {
                 background-color: rgb(0, 0, 0, .23);
                 border-radius: 20px;
                 padding: 54px 38px;
+                transition: .3s ease-in;
 
                 &:hover {
                     transform: translateY(-4px);
