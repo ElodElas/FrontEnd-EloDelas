@@ -68,7 +68,7 @@ main {
         flex: 1 0 auto;
         min-height: calc(100vh - 107px);
         background-color: var(--c2);
-        background-image: url('../img/index/ColagemMulheres.png');
+        background-image: url('../img/HomePage/ColagemMulheres.png');
         background-size: cover;
         background-position: center;
         display: flex;
