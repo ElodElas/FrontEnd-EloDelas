@@ -16,6 +16,7 @@
     }
 
     const currentUser = {
+        id: "ana-beatriz",
         name: "Ana Beatriz",
         profession: "Psicóloga",
         initial: "A"
@@ -476,6 +477,8 @@
         const author = post.anonymous
             ? "Participante anônima"
             : post.author;
+        const isOwnPost = post.ownerId === currentUser.id ||
+            (!post.anonymous && post.author === currentUser.name);
 
         const profession =
             !post.anonymous &&
@@ -485,7 +488,17 @@
                 : "";
 
         return `
-            <article class="postCard" data-post-id="${escapeHTML(post.id)}">
+            <article class="postCard${isOwnPost ? " donoPost" : ""}" data-post-id="${escapeHTML(post.id)}">
+
+                ${isOwnPost
+                    ? `<button type="button"
+                        class="postExcluir"
+                        data-delete-post="${escapeHTML(post.id)}"
+                        aria-label="Excluir minha publicação"
+                        title="Excluir publicação">
+                        ${icon("fa-trash")}<span>Excluir</span>
+                    </button>`
+                    : ""}
 
                 <div class="postAutor">
 
@@ -818,6 +831,7 @@
 
                 state.posts.unshift({
                     id: `post-${Date.now()}`,
+                    ownerId: currentUser.id,
                     author: anon ? "Participante anônima" : currentUser.name,
                     profession: anon ? "" : currentUser.profession,
                     showProfession: !anon && data.get("hideProfession") !== "on",
@@ -1292,6 +1306,32 @@
             if (input) input.value = "";
             if (preview) preview.innerHTML = "";
 
+            return;
+        }
+
+        // Excluir somente publicações pertencentes à usuária atual
+        const deletePostButton = target.closest("[data-delete-post]");
+
+        if (deletePostButton) {
+            const post = state.posts.find(
+                item => item.id === deletePostButton.dataset.deletePost
+            );
+            const isOwnPost = post && (
+                post.ownerId === currentUser.id ||
+                (!post.anonymous && post.author === currentUser.name)
+            );
+
+            if (!isOwnPost) return;
+
+            if (!window.confirm("Deseja excluir esta publicação? Essa ação não pode ser desfeita.")) {
+                return;
+            }
+
+            state.posts = state.posts.filter(
+                item => item.id !== post.id
+            );
+            saveState();
+            openForum();
             return;
         }
 

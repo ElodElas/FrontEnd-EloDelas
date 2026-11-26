@@ -189,11 +189,46 @@ body.modalAberto {
 }
 
 .postCard {
+    position: relative;
     padding: 21px;
     border: 1px solid #EEDCE8;
     border-radius: 15px;
     background: #fff;
     box-shadow: 0 3px 12px rgba(59,11,59,.04);
+}
+
+.postCard.donoPost .postAutor {
+    padding-right: 92px;
+}
+
+.postExcluir {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 34px;
+    padding: 7px 11px;
+    border: 1px solid #E9C4D7;
+    border-radius: 18px;
+    background: #FFF5FA;
+    color: #903963;
+    font: 500 12px Poppins, sans-serif;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.postExcluir:hover {
+    border-color: #903963;
+    background: #903963;
+    color: #fff;
+}
+
+.postExcluir:focus-visible {
+    outline: 3px solid #BFA3E0;
+    outline-offset: 2px;
 }
 
 .postAutor {
@@ -1171,6 +1206,18 @@ body.modalAberto {
 
     .postCard {
         padding: 15px;
+    }
+
+    .postExcluir {
+        top: 10px;
+        right: 10px;
+        min-height: 32px;
+        padding: 6px 9px;
+        font-size: 11px;
+    }
+
+    .postCard.donoPost .postAutor {
+        padding-right: 82px;
     }
 
     .postAcoes {

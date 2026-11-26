@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteção | Elo d'Elas</title>
+    <link rel="stylesheet" href="css/DashboardBase.css">
+    <link rel="stylesheet" href="css/DashboardProtecao.css">
+    <link rel="stylesheet" href="css/DashboardProtecaoModais.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<main class="dashboardProtecao">
+    <aside class="barraLateral">
+        <a class="marca" href="PagLogin.html" aria-label="Elo d'Elas - início">
+            <img src="img/LogoNegativa.png" alt="Elo d'Elas">
+        </a>
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a href="HomePage.html" class="itemNavegacao"><i class="fa-solid fa-house"></i><span>Início</span></a>
+            <a href="DashboardAjuda.html" class="itemNavegacao"><i class="fa-regular fa-clipboard"></i><span>Ajuda Rápida</span></a>
+            <a href="DashboardOportunidade.html" class="itemNavegacao"><i class="fa-solid fa-medal"></i><span>Oportunidades de Crescimento</span></a>
+            <a href="DashboardComunidade.html" class="itemNavegacao"><i class="fa-solid fa-people-group"></i><span>Comunidade</span></a>
+            <a href="DashboardProtecao.html" class="itemNavegacao ativo" aria-current="page"><i class="fa-solid fa-circle-exclamation"></i><span>Proteção</span></a>
+        </nav>
+        <section class="recado" aria-label="Mensagem da comunidade">
+            <h2>Juntas somos mais fortes.</h2>
+            <p>A força feminina é mostrada com mulheres conectadas.</p>
+        </section>
+        <a href="#perfil" class="usuario">
+            <span class="avatar" aria-hidden="true">C</span>
+            <span class="dadosUsuario"><strong>Ana Beatriz</strong><small>Psicóloga</small></span>
+        </a>
+    </aside>
+
+    <section class="conteudoProtecao" aria-label="Locais de apoio e proteção">
+        <img class="ramoProtecao ramoSuperiorProtecao" src="img/Ramo%20Topo.png" alt="" aria-hidden="true">
+        <img class="ramoProtecao ramoInferiorProtecao" src="img/Ramo%20baixo.png" alt="" aria-hidden="true">
+
+        <header class="cabecalhoProtecao">
+            <div class="saudacaoProtecao">
+                <h1>Olá, Ana Beatriz! <span aria-hidden="true">♡</span></h1>
+                <p>Que bom ter você por aqui!</p>
+            </div>
+            <a class="botaoEmergencia" href="#canais-oficiais"><i class="fa-solid fa-circle-exclamation"></i> Emergência</a>
+        </header>
+
+        <section class="bannerProtecao" aria-labelledby="tituloBannerProtecao">
+            <img class="florBanner florBannerEsquerda" src="img/DashProtecao/FlorBannerProtecao.png" alt="" aria-hidden="true">
+            <div class="imagemBannerProtecao"><img src="img/DashProtecao/ImgBannerProtecao.png" alt="Três mulheres unidas, representando apoio e acolhimento"></div>
+            <div class="textoBannerProtecao">
+                <h2 id="tituloBannerProtecao">Está com problemas?</h2>
+                <p>Aqui você encontra canais oficiais que podem ajudar em seu caso.</p>
+            </div>
+            <a href="#canais-oficiais" class="linkCanais" data-open-canais><i class="fa-solid fa-arrow-up-right-from-square"></i> Encontrar canais oficiais</a>
+            <img class="florBanner florBannerDireita" src="img/DashProtecao/FlorBannerProtecao.png" alt="" aria-hidden="true">
+        </section>
+
+        <section class="painelMapa" aria-labelledby="tituloMapa">
+            <div class="cabecalhoMapa">
+                <h2 id="tituloMapa"><i class="fa-regular fa-heart"></i> Encontre Apoio Perto</h2>
+                <label class="seletorRegiao">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    <span class="visualmenteOculto">Selecione uma região</span>
+                    <select name="regiao" aria-label="Selecione uma região">
+                        <option>São Paulo, SP</option>
+                        <option>Rio de Janeiro, RJ</option>
+                        <option selected>Belo Horizonte, MG</option>
+                        <option>Brasília, DF</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </label>
+            </div>
+
+            <div class="filtrosMapa" role="group" aria-label="Filtrar locais por categoria">
+                <button type="button" class="filtroMapa ativo"><i class="fa-solid fa-layer-group"></i> Todos</button>
+                <button type="button" class="filtroMapa"><i class="fa-solid fa-shield-halved"></i> Polícia</button>
+                <button type="button" class="filtroMapa"><i class="fa-solid fa-house"></i> Acolhimento</button>
+                <button type="button" class="filtroMapa"><i class="fa-solid fa-scale-balanced"></i> Jurídico</button>
+                <button type="button" class="filtroMapa"><i class="fa-solid fa-kit-medical"></i> Saúde</button>
+                <button type="button" class="filtroMapa"><i class="fa-solid fa-hands-helping"></i> Assistência Social</button>
+            </div>
+
+            <div class="mapa" aria-label="Mapa de serviços de apoio em Belo Horizonte">
+                <iframe id="mapaCidades" title="Mapa de Belo Horizonte" src="https://www.openstreetmap.org/export/embed.html?bbox=-44.10%2C-20.02%2C-43.82%2C-19.78&amp;layer=mapnik" loading="lazy"></iframe>
+                <span class="marcadorMapa marcadorUm" aria-label="Serviço de apoio"><i class="fa-solid fa-location-dot"></i></span>
+                <span class="marcadorMapa marcadorDois" aria-label="Serviço de apoio"><i class="fa-solid fa-location-dot"></i></span>
+                <span class="marcadorMapa marcadorTres" aria-label="Serviço de apoio"><i class="fa-solid fa-location-dot"></i></span>
+                <span class="marcadorMapa marcadorQuatro" aria-label="Serviço de apoio"><i class="fa-solid fa-location-dot"></i></span>
+                <span class="marcadorMapa marcadorCinco" aria-label="Serviço de apoio"><i class="fa-solid fa-location-dot"></i></span>
+                <span class="legendaMapa"><i class="fa-solid fa-location-dot"></i> Locais de apoio próximos</span>
+            </div>
+
+            <form class="buscaMapa" action="#mapa" method="get">
+                <label class="botaoRegiao" for="buscaLocal"><i class="fa-solid fa-location-crosshairs"></i> Pesquise uma região</label>
+                <div class="campoBusca">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    <input id="buscaLocal" type="search" name="local" placeholder="Buscar cidade, bairro ou endereço...">
+                    <button class="botaoBuscar" type="submit" aria-label="Buscar localização"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </form>
+        </section>
+        <p class="notaMapa">Os locais exibidos são ilustrativos. Em caso de emergência, procure os canais oficiais de atendimento.</p>
+    </section>
+</main>
+<div id="modalRootProtecao"></div>
+<script src="js/DashboardProtecao.js" defer></script>
+</body>
+</html>

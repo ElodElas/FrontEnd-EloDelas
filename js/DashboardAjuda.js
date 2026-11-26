@@ -1119,6 +1119,20 @@
 
         `;
 
+        // Os botões são recriados junto com a grade; associe a ação em cada
+        // novo elemento para que ela continue funcionando após busca e filtros.
+        grid.querySelectorAll("[data-read]").forEach(button => {
+            button.addEventListener("click", () => {
+                openArticle(button.dataset.read);
+            });
+        });
+
+        grid.querySelectorAll("[data-list-favorite]").forEach(button => {
+            button.addEventListener("click", () => {
+                toggleFavorite(button.dataset.listFavorite);
+            });
+        });
+
     };
 
     // ==========================================
@@ -1172,44 +1186,32 @@
 
         // Abrir tutorial e favoritar usando delegação de eventos
 
-        body.addEventListener("click", event => {
-
-            const categoryButton = event.target.closest("[data-category-filter]");
-
-            if (categoryButton) {
-                body.dataset.categoryFilter = categoryButton.dataset.categoryFilter;
-                body.querySelectorAll("[data-category-filter]").forEach(button => {
-                    button.classList.toggle("ativo", button === categoryButton);
-                });
-                updateListResults(mode, body);
-                return;
-            }
-
-            const readButton = event.target.closest("[data-read]");
-
-            if (readButton) {
-
-                openArticle(readButton.dataset.read);
-
-                return;
-
-            }
-
-            const favoriteButton = event.target.closest(
-                "[data-list-favorite]"
-            );
-
-            if (favoriteButton) {
-
-                toggleFavorite(favoriteButton.dataset.listFavorite);
-
-            }
-
-        });
-
         updateListResults(mode, body);
 
     };
+
+    // Os cards são recriados a cada busca/filtro e os modais são substituídos
+    // na navegação. O root permanece montado durante todo esse fluxo.
+    root.addEventListener("click", event => {
+
+        const body = event.target.closest(".modalCorpo");
+
+        if (!body || body !== currentOverlay?.querySelector(".modalCorpo")) {
+            return;
+        }
+
+        const categoryButton = event.target.closest("[data-category-filter]");
+
+        if (categoryButton) {
+            body.dataset.categoryFilter = categoryButton.dataset.categoryFilter;
+            body.querySelectorAll("[data-category-filter]").forEach(button => {
+                button.classList.toggle("ativo", button === categoryButton);
+            });
+            updateListResults(currentOverlay.dataset.mode, body);
+            return;
+        }
+
+    });
 
     // ==========================================
     // ABRIR MODAIS DE LISTAGEM
