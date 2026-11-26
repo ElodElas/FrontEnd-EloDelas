@@ -1,8 +1,4 @@
 
-/* ==========================================================
-   DASHBOARD COMUNIDADE - ELO D'ELAS
-   Fórum, publicações, grupos e eventos
-   ========================================================== */
 
 (() => {
     "use strict";
@@ -307,9 +303,6 @@
     let previousFocus = null;
     let imageDraft = "";
 
-    /* ======================================================
-       ARMAZENAMENTO
-    ====================================================== */
 
     function loadState() {
         try {
@@ -378,9 +371,6 @@
         }
     }
 
-    /* ======================================================
-       FUNÇÕES AUXILIARES
-    ====================================================== */
 
     function escapeHTML(value = "") {
         return String(value).replace(/[&<>"']/g, char => ({
@@ -469,9 +459,6 @@
         `;
     }
 
-    /* ======================================================
-       FÓRUM E PUBLICAÇÕES
-    ====================================================== */
 
     function renderPost(post, detailed = false) {
         const author = post.anonymous
@@ -864,9 +851,6 @@
         body.innerHTML = renderPost(post, true);
     }
 
-    /* ======================================================
-       GRUPOS DA COMUNIDADE
-    ====================================================== */
 
     function openGroups() {
         const body = createModal({
@@ -1127,9 +1111,6 @@
         openGroupDetails(groupId);
     }
 
-    /* ======================================================
-       EVENTOS DA COMUNIDADE
-    ====================================================== */
 
     function openEvents() {
         const body = createModal({
@@ -1256,10 +1237,6 @@
         openEventDetails(id);
     }
 
-    /* ======================================================
-       EVENTOS DE CLIQUE
-       ESCUTA NO DOCUMENTO PARA FUNCIONAR FORA DO MODAL
-    ====================================================== */
 
     document.addEventListener("click", e => {
 
@@ -1267,7 +1244,7 @@
 
         if (!(target instanceof Element)) return;
 
-        // Fechar modal
+
         if (
             target === activeOverlay ||
             target.closest("[data-close-modal]")
@@ -1276,7 +1253,7 @@
             return;
         }
 
-        // Abrir telas principais
+
         const trigger = target.closest("[data-open-community]");
 
         if (trigger) {
@@ -1296,7 +1273,7 @@
             return;
         }
 
-        // Remover imagem da publicação
+
         if (target.closest("[data-remove-image]")) {
             imageDraft = "";
 
@@ -1309,7 +1286,7 @@
             return;
         }
 
-        // Excluir somente publicações pertencentes à usuária atual
+
         const deletePostButton = target.closest("[data-delete-post]");
 
         if (deletePostButton) {
@@ -1335,7 +1312,7 @@
             return;
         }
 
-        // Curtir publicação
+
         const like = target.closest("[data-like-post]");
 
         if (like) {
@@ -1359,7 +1336,7 @@
             return;
         }
 
-        // Abrir comentários
+
         const comments = target.closest("[data-show-comments]");
 
         if (comments) {
@@ -1367,7 +1344,7 @@
             return;
         }
 
-        // Detalhes do grupo
+
         const groupDetails = target.closest("[data-group-details]");
 
         if (groupDetails) {
@@ -1375,7 +1352,7 @@
             return;
         }
 
-        // Entrar ou sair do grupo
+
         const toggleGroupButton = target.closest("[data-toggle-group]");
 
         if (toggleGroupButton) {
@@ -1383,7 +1360,7 @@
             return;
         }
 
-        // Detalhes do evento
+
         const eventDetails = target.closest("[data-event-details]");
 
         if (eventDetails) {
@@ -1391,7 +1368,7 @@
             return;
         }
 
-        // Participar ou cancelar evento
+
         const toggleEventButton = target.closest("[data-toggle-event]");
 
         if (toggleEventButton) {
@@ -1399,7 +1376,7 @@
             return;
         }
 
-        // Entrar em grupo pelo card da página
+
         const join = target.closest("[data-join-group]");
 
         if (join) {
@@ -1418,9 +1395,6 @@
 
     });
 
-    /* ======================================================
-       ENVIO DE COMENTÁRIOS E MENSAGENS
-    ====================================================== */
 
     document.addEventListener("submit", e => {
 
@@ -1428,7 +1402,7 @@
 
         if (!(target instanceof Element)) return;
 
-        // Enviar mensagem no grupo
+
         const chatForm = target.closest("[data-group-chat-form]");
 
         if (chatForm) {
@@ -1437,7 +1411,7 @@
             return;
         }
 
-        // Enviar comentário no fórum
+
         const form = target.closest("[data-comment-form]");
 
         if (!form) return;
@@ -1465,9 +1439,6 @@
 
     });
 
-    /* ======================================================
-       TECLADO E ACESSIBILIDADE
-    ====================================================== */
 
     document.addEventListener("keydown", e => {
 
@@ -1505,7 +1476,7 @@
         }
     });
 
-    // Enter e Espaço também ativam as publicações.
+
     document.addEventListener("keydown", e => {
 
         const target = e.target;

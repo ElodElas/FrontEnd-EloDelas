@@ -212,7 +212,6 @@ main {
             justify-content: center;
             gap: 12px;
             margin-top: 60px;
-            /* margin-top: 60px; */
 
 
             & img {
@@ -225,7 +224,7 @@ main {
             position: relative;
             width: min(960px, 100%);
             min-height: 340px;
-            /* perspective: 1000px; */
+
             touch-action: pan-y;
 
             & .card {
@@ -245,7 +244,7 @@ main {
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
-                /* transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease; */
+
                 user-select: none;
 
                 & h2 {
@@ -287,6 +286,175 @@ main {
             }
         }
 
+    }
+
+    & .tree-story {
+        position: relative;
+        isolation: isolate;
+        flex: 0 0 auto;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1432 / 2404;
+        background: var(--c1);
+        overflow: clip;
+
+        & .tree-figure {
+            position: absolute;
+            z-index: 1;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            aspect-ratio: auto;
+        }
+
+        & .tree-image,
+        & .tree-woman {
+            position: absolute;
+            display: block;
+            object-fit: contain;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        & .tree-image {
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        & .tree-woman {
+            z-index: 2;
+            height: auto;
+        }
+
+        & .tree-woman-community {
+            left: 39%;
+            top: 19%;
+            width: 9%;
+        }
+
+        & .tree-woman-opportunities {
+            left: 50%;
+            top: 40%;
+            width: 12%;
+        }
+
+        & .tree-woman-wellbeing {
+            left: 52%;
+            top: 60%;
+            width: 12%;
+        }
+
+        & .tree-woman-protection {
+            left: 60%;
+            top: 87%;
+            width: 10%;
+        }
+
+        & .tree-copy {
+            position: absolute;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: min(23vw, 310px);
+            color: var(--c5);
+
+            & h2 {
+                margin: 0 0 4px;
+                font-family: 'Playfair Display', serif;
+                font-size: clamp(26px, 2.5vw, 38px);
+                line-height: 1.08;
+            }
+
+            & p {
+                font-size: clamp(14px, 1.2vw, 18px);
+                line-height: 1.35;
+            }
+        }
+
+        & .tree-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 14px;
+            padding: 9px 14px;
+            border-radius: 10px;
+            background: var(--c5);
+            color: var(--c1);
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+
+            &:focus-visible {
+                outline: 3px solid var(--c4);
+                outline-offset: 3px;
+            }
+        }
+
+        & .tree-number {
+            display: inline-flex;
+            width: 48px;
+            height: 48px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            background: var(--c5);
+            color: var(--c1);
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        & .tree-copy-community {
+            left: 10%;
+            top: 14%;
+        }
+
+        & .tree-copy-opportunities {
+            right: 11%;
+            top: 37%;
+        }
+
+        & .tree-copy-wellbeing {
+            left: 17%;
+            top: 58%;
+            width: min(29vw, 380px);
+
+            & h2 {
+                font-size: clamp(22px, 2.1vw, 32px);
+                white-space: nowrap;
+            }
+        }
+
+        & .tree-copy-protection {
+            right: 9%;
+            top: 80%;
+        }
+
+        & .tree-wave {
+            position: absolute;
+            z-index: 4;
+            left: 0;
+            width: 100%;
+            pointer-events: none;
+
+            & svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        & .tree-wave-top {
+            top: 0;
+            height: 100px;
+        }
+
+        & .tree-wave-bottom {
+            bottom: 0;
+            height: 120px;
+        }
     }
 
     & .contributor-section {
@@ -439,7 +607,7 @@ footer {
         display: flex;
         flex-direction: column;
     }
-    
+
     & ul {
         display: flex;
         flex-direction: column;
@@ -479,7 +647,7 @@ footer {
 
     & .dues {
         text-align: center;
-        
+
         & hr {
             border: none;
             border-top: 1px solid rgba(255, 255, 255, 0.25);
@@ -589,6 +757,39 @@ footer {
 }
 
 @media (max-width: 900px) {
+    main .tree-story {
+        height: max(150vh, 160vw);
+        min-height: 0;
+
+        & .tree-figure {
+            inset: 0 auto 0 50%;
+            width: auto;
+            height: 100%;
+            aspect-ratio: 1432 / 2404;
+            transform: translateX(-50%);
+        }
+
+        & .tree-copy {
+            width: 29%;
+
+            & h2 {
+                font-size: clamp(24px, 3.2vw, 34px);
+            }
+
+            & p {
+                font-size: clamp(13px, 1.6vw, 16px);
+            }
+        }
+
+        & .tree-copy-wellbeing {
+            width: 38%;
+
+            & h2 {
+                font-size: clamp(21px, 2.6vw, 28px);
+            }
+        }
+    }
+
     main .contributor-section {
         & .boxes-container {
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -664,6 +865,75 @@ footer {
 
         & .more-title {
             font-size: 34px;
+        }
+    }
+
+    main .tree-story {
+        height: max(130vh, min(285vw, 190vh));
+
+        & .tree-woman-community {
+            left: 39%;
+            top: 18%;
+            width: 9%;
+        }
+
+        & .tree-woman-opportunities {
+            left: 50%;
+            top: 40%;
+            width: 11%;
+        }
+
+        & .tree-woman-wellbeing {
+            left: 52%;
+            top: 58%;
+            width: 11%;
+        }
+
+        & .tree-woman-protection {
+            left: 60%;
+            top: 89%;
+            width: 8%;
+        }
+
+        & .tree-copy {
+            width: 39%;
+
+            & h2 {
+                font-size: clamp(18px, 5vw, 26px);
+            }
+
+            & p {
+                font-size: clamp(12px, 3.2vw, 15px);
+            }
+        }
+
+        & .tree-copy-wellbeing {
+            width: 54%;
+
+            & h2 {
+                font-size: clamp(16px, 4.2vw, 22px);
+            }
+        }
+
+        & .tree-link {
+            margin-top: 8px;
+            padding: 8px 10px;
+            font-size: 10px;
+        }
+
+        & .tree-number {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 6px;
+            font-size: 20px;
+        }
+
+        & .tree-wave-top {
+            height: 45px;
+        }
+
+        & .tree-wave-bottom {
+            height: 55px;
         }
     }
 

@@ -13,6 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="css/GlobalScrollbars.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
@@ -100,10 +101,57 @@
                 <p>Descubra tudo o que podemos construir juntas.</p>
 
                 <div class="arrow-down">
-                    <a href="">
+                    <a href="#tree-story" aria-label="Conheça os pilares do Elo d'Elas">
                         <i class="fa-solid fa-angles-down"></i>
                     </a>
                 </div>
+            </div>
+        </section>
+
+        <section class="tree-story" id="tree-story" aria-label="Conheça os quatro pilares do Elo d'Elas">
+            <div class="tree-wave tree-wave-top" aria-hidden="true">
+                <svg viewBox="0 0 1440 130" preserveAspectRatio="none" focusable="false">
+                    <path d="M0,72 C180,120 330,30 520,65 C740,105 900,125 1100,68 C1250,25 1350,32 1440,62 L1440,0 L0,0 Z" fill="#E2CEF0"></path>
+                </svg>
+            </div>
+
+            <div class="tree-figure" aria-hidden="true">
+                <img class="tree-image" src="img/HomePage/ArvoreHome.png" alt="" fetchpriority="high" decoding="async">
+                <img class="tree-woman tree-woman-community" src="img/HomePage/MulherSentadaHome.png" alt="" decoding="async">
+                <img class="tree-woman tree-woman-opportunities" src="img/HomePage/MulherEquilibrandoOportunidadeHome.png" alt="" decoding="async">
+                <img class="tree-woman tree-woman-wellbeing" src="img/HomePage/MulherDeslizandoHome.png" alt="" decoding="async">
+                <img class="tree-woman tree-woman-protection" src="img/HomePage/MulherAndandoHome.png" alt="" decoding="async">
+            </div>
+
+            <article class="tree-copy tree-copy-community">
+                <span class="tree-number">1</span>
+                <h2>Comunidade</h2>
+                <p>Um espaço para se conectar, trocar ideias, compartilhar momentos e apoiar outras mulheres em cada momento.</p>
+                <a class="tree-link" href="./DashboardComunidade.html">Explorar Comunidade</a>
+            </article>
+            <article class="tree-copy tree-copy-opportunities">
+                <span class="tree-number">2</span>
+                <h2>Oportunidades</h2>
+                <p>Encontre vagas, cursos, dicas e apoios para impulsionar sua carreira e encontrar sua melhor versão.</p>
+                <a class="tree-link" href="./DashboardOportunidade.html">Explorar Oportunidades</a>
+            </article>
+            <article class="tree-copy tree-copy-wellbeing">
+                <span class="tree-number">3</span>
+                <h2>Ajuda e Bem-Estar</h2>
+                <p>Conteúdos e orientações para o seu dia a dia, saúde, direitos, casa, autoestima e muito mais.</p>
+                <a class="tree-link" href="./DashboardAjuda.html">Explorar Ajuda</a>
+            </article>
+            <article class="tree-copy tree-copy-protection">
+                <span class="tree-number">4</span>
+                <h2>Proteção</h2>
+                <p>Acesso rápido a canais de ajuda, informações e recursos para sua segurança e proteção.</p>
+                <a class="tree-link" href="./DashboardProtecao.html">Explorar Proteção</a>
+            </article>
+
+            <div class="tree-wave tree-wave-bottom" aria-hidden="true">
+                <svg viewBox="0 0 1440 150" preserveAspectRatio="none" focusable="false">
+                    <path d="M0,75 C180,20 330,105 540,78 C740,52 890,12 1090,72 C1260,120 1360,108 1440,70 L1440,150 L0,150 Z" fill="#903963"></path>
+                </svg>
             </div>
         </section>
 
@@ -180,7 +228,7 @@
                     <li><a href="#">Privacidade</a></li>
                 </ul>
             </nav>
-            
+
             <nav class="talk-footer">
                 <h3>Fale Conosco</h3>
                 <ul>

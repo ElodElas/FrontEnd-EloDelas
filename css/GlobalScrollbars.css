@@ -1,0 +1,29 @@
+
+* {
+    scrollbar-color: #903963 #FCE7EC;
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FCE7EC;
+}
+
+::-webkit-scrollbar-thumb {
+    min-height: 36px;
+    border: 2px solid #FCE7EC;
+    border-radius: 999px;
+    background: #903963;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #762D52;
+}
+
+::-webkit-scrollbar-corner {
+    background: #FCE7EC;
+}

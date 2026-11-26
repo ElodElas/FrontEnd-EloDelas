@@ -1,17 +1,17 @@
 const carousel = document.querySelector('#carousel')
 const cards = [...carousel.querySelectorAll('.card')]
-const n = cards.length // use 3 ou mais cards
+const n = cards.length
 
-/* ====== AJUSTES ====== */
-const espaco = 460        // distância do centro até o centro dos cards laterais
-const escalaCentro = 1.25 // tamanho do card do meio
-const escalaLado = 0.85   // tamanho dos cards laterais
-const escalaFundo = 0.7   // tamanho do card quando passa por trás
-const pixel = 250         // quanto arrastar para girar um card inteiro
-/* ===================== */
 
-let pos = 0               // posição atual (fracionada durante a animação)
-let alvo = 1              // posição para onde estamos girando
+const espaco = 460
+const escalaCentro = 1.25
+const escalaLado = 0.85
+const escalaFundo = 0.7
+const pixel = 250
+
+
+let pos = 0
+let alvo = 1
 let animando = false
 let arrastando = false
 let startX = 0
@@ -27,14 +27,14 @@ function distancia() {
 }
 
 function render() {
-    // em telas pequenas, aproxima os cards laterais
+
     const e = distancia()
     const meio = n / 2
 
     for (let i = 0; i < n; i++) {
         const card = cards[i]
 
-        // d = distância deste card até o centro (negativo = esquerda)
+
         let d = (((i - pos) % n) + n) % n
         if (d > meio) { d -= n }
 
@@ -44,14 +44,14 @@ function render() {
         let x, scale, blur
 
         if (abs <= 1) {
-            // entre o centro e o lado: posição e tamanho fixos
+
             x = d * e
             scale = carousel.clientWidth < 600
                 ? 1 + (0.72 - 1) * abs
                 : escalaCentro + (escalaLado - escalaCentro) * abs
             blur = 0
         } else {
-            // passando por trás: volta ao centro e troca de lado
+
             const t = (abs - 1) / (meio - 1)
             x = sinal * e * (1 - t)
             scale = escalaLado + (escalaFundo - escalaLado) * t

@@ -1,19 +1,9 @@
-/* ==========================================================
-   MODAIS - DASHBOARD OPORTUNIDADE | ELO D'ELAS
-   Padrão visual da Dashboard Ajuda
-   ========================================================== */
 
-/* ==========================================================
-   BLOQUEIO DA ROLAGEM DA PÁGINA
-   ========================================================== */
 
 body.modalOportunidadeAberto {
     overflow: hidden;
 }
 
-/* ==========================================================
-   FUNDO DO MODAL
-   ========================================================== */
 
 .modalOverlayOportunidades {
     position: fixed;
@@ -44,9 +34,6 @@ body.modalOportunidadeAberto {
     visibility: visible;
 }
 
-/* ==========================================================
-   JANELA PRINCIPAL
-   ========================================================== */
 
 .modalOportunidade {
     position: relative;
@@ -77,9 +64,6 @@ body.modalOportunidadeAberto {
     transform: translateY(0) scale(1);
 }
 
-/* ==========================================================
-   CONTEÚDO INTERNO
-   ========================================================== */
 
 #conteudoModalOportunidade {
     display: flex;
@@ -91,9 +75,6 @@ body.modalOportunidadeAberto {
     overflow: hidden;
 }
 
-/* ==========================================================
-   BOTÃO FECHAR
-   ========================================================== */
 
 .fecharModalOportunidade {
     position: absolute;
@@ -138,9 +119,6 @@ body.modalOportunidadeAberto {
     outline-offset: 3px;
 }
 
-/* ==========================================================
-   CABEÇALHO
-   ========================================================== */
 
 .topoModalOportunidade {
     position: relative;
@@ -191,9 +169,6 @@ body.modalOportunidadeAberto {
     line-height: 1.6;
 }
 
-/* ==========================================================
-   TAGS DO CABEÇALHO
-   ========================================================== */
 
 .tagsModal {
     display: flex;
@@ -230,9 +205,6 @@ body.modalOportunidadeAberto {
     color: #FFF;
 }
 
-/* ==========================================================
-   AVISO DE VAGA AFIRMATIVA
-   ========================================================== */
 
 .avisoAfirmativo {
     display: flex;
@@ -252,9 +224,6 @@ body.modalOportunidadeAberto {
     margin-top: 3px;
 }
 
-/* ==========================================================
-   CORPO COM ROLAGEM INDEPENDENTE
-   ========================================================== */
 
 .corpoModalOportunidade {
     flex: 1;
@@ -290,9 +259,6 @@ body.modalOportunidadeAberto {
     background: #903963;
 }
 
-/* ==========================================================
-   IMAGEM
-   ========================================================== */
 
 .imagemModalOportunidade {
     display: flex;
@@ -368,9 +334,6 @@ body.modalOportunidadeAberto {
     font-size: 32px;
 }
 
-/* ==========================================================
-   SEÇÕES DE DESCRIÇÃO
-   ========================================================== */
 
 .secaoDescricaoModal {
     margin-bottom: 25px;
@@ -412,9 +375,6 @@ body.modalOportunidadeAberto {
     color: #903963;
 }
 
-/* ==========================================================
-   SEÇÃO DE INFORMAÇÕES
-   ========================================================== */
 
 .secaoArtigoModal {
     margin-bottom: 24px;
@@ -461,9 +421,6 @@ body.modalOportunidadeAberto {
     overflow-wrap: anywhere;
 }
 
-/* ==========================================================
-   AVISO SOBRE LINKS EXTERNOS
-   ========================================================== */
 
 .avisoModalExterno {
     display: flex;
@@ -492,9 +449,6 @@ body.modalOportunidadeAberto {
     font-size: 15px;
 }
 
-/* ==========================================================
-   BOTÃO DE ACESSO
-   ========================================================== */
 
 .botaoAcessarModal {
     display: flex;
@@ -534,9 +488,6 @@ body.modalOportunidadeAberto {
     box-shadow: 0 6px 16px rgba(59, 11, 59, .16);
 }
 
-/* ==========================================================
-   RESPONSIVIDADE - TABLETS
-   ========================================================== */
 
 @media (max-width: 760px) {
     .modalOverlayOportunidades {
@@ -565,9 +516,6 @@ body.modalOportunidadeAberto {
     }
 }
 
-/* ==========================================================
-   RESPONSIVIDADE - CELULARES
-   ========================================================== */
 
 @media (max-width: 600px) {
     .modalOverlayOportunidades {
@@ -671,9 +619,6 @@ body.modalOportunidadeAberto {
     }
 }
 
-/* ==========================================================
-   RESPONSIVIDADE - CELULARES PEQUENOS
-   ========================================================== */
 
 @media (max-width: 380px) {
     .topoModalOportunidade {
@@ -711,9 +656,6 @@ body.modalOportunidadeAberto {
     }
 }
 
-/* ==========================================================
-   ACESSIBILIDADE - MOVIMENTO REDUZIDO
-   ========================================================== */
 
 @media (prefers-reduced-motion: reduce) {
     .modalOverlayOportunidades,

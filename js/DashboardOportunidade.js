@@ -1,14 +1,8 @@
-// ==========================================================
-// DASHBOARD OPORTUNIDADE - ELO D'ELAS
-// Cursos, vagas, filtros, navegação e modais
-// ==========================================================
+
 
 (() => {
     "use strict";
 
-    // ======================================================
-    // CONFIGURAÇÕES E DADOS
-    // ======================================================
 
     const temas = [
         "Tecnologia",
@@ -18,9 +12,6 @@
         "Educação"
     ];
 
-    // ------------------------------------------------------
-    // CURSOS
-    // ------------------------------------------------------
 
     const cursos = [
         {
@@ -220,9 +211,6 @@
         }
     ];
 
-    // ------------------------------------------------------
-    // VAGAS
-    // ------------------------------------------------------
 
     const vagas = [
         {
@@ -584,9 +572,6 @@
         `;
     }
 
-    // ======================================================
-    // ELEMENTOS DA PÁGINA
-    // ======================================================
 
     const paginaInicial = document.getElementById("paginaInicialOportunidade");
     const paginaListagem = document.getElementById("paginaListagemOportunidade");
@@ -615,9 +600,6 @@
         return;
     }
 
-    // ======================================================
-    // ESTADOS
-    // ======================================================
 
     let tipoAtual = "cursos";
     let temaAtual = "";
@@ -626,9 +608,6 @@
     let pesquisaAtual = "";
     let elementoAnteriorModal = null;
 
-    // ======================================================
-    // FUNÇÕES AUXILIARES
-    // ======================================================
 
     function normalizar(texto) {
         return String(texto || "")
@@ -674,9 +653,6 @@
         });
     }
 
-    // ======================================================
-    // NAVEGAÇÃO ENTRE PÁGINAS
-    // ======================================================
 
     function abrirListagem(tipo, tema = "", pesquisaInicial = "") {
         tipoAtual = tipo;
@@ -742,9 +718,6 @@
         });
     }
 
-    // ======================================================
-    // FILTROS
-    // ======================================================
 
     function montarFiltros() {
         if (tipoAtual === "tema") {
@@ -856,9 +829,6 @@
         renderizarResultados();
     });
 
-    // ======================================================
-    // CARDS DE CURSOS
-    // ======================================================
 
     function cardCurso(curso) {
         const caminhoImagem = imagemDoCurso(curso);
@@ -908,9 +878,6 @@
         `;
     }
 
-    // ======================================================
-    // CARDS DE VAGAS
-    // ======================================================
 
     function cardVaga(vaga) {
         return `
@@ -952,9 +919,6 @@
         `;
     }
 
-    // ======================================================
-    // RESULTADOS POR TEMA
-    // ======================================================
 
     function montarSecaoTema(titulo, icone, lista, tipo) {
         const cards = lista.map(item =>
@@ -1018,9 +982,6 @@
         mensagemVazia.hidden = total > 0;
     }
 
-    // ======================================================
-    // RESULTADOS DAS LISTAGENS GERAIS
-    // ======================================================
 
     function renderizarResultadosGerais() {
         let lista = tipoAtual === "cursos" ? cursos : vagas;
@@ -1048,9 +1009,6 @@
         mensagemVazia.hidden = lista.length > 0;
     }
 
-    // ======================================================
-    // RENDERIZAÇÃO PRINCIPAL
-    // ======================================================
 
     function renderizarResultados() {
         if (tipoAtual === "tema") {
@@ -1060,9 +1018,6 @@
         }
     }
 
-    // ======================================================
-    // PESQUISA
-    // ======================================================
 
     campoPesquisaListagem.addEventListener("input", evento => {
         pesquisaAtual = evento.target.value;
@@ -1077,9 +1032,6 @@
         });
     }
 
-    // ======================================================
-    // ACESSOS RÁPIDOS
-    // ======================================================
 
     document.querySelectorAll(".cardAcesso").forEach(botao => {
         botao.addEventListener("click", () => {
@@ -1087,9 +1039,6 @@
         });
     });
 
-    // ======================================================
-    // BOTÕES VER TODOS
-    // ======================================================
 
     document.querySelectorAll("[data-abrir-lista]").forEach(botao => {
         botao.addEventListener("click", () => {
@@ -1097,9 +1046,6 @@
         });
     });
 
-    // ======================================================
-    // BOTÃO VOLTAR
-    // ======================================================
 
     const botaoVoltar = document.getElementById("voltarOportunidades");
 
@@ -1107,9 +1053,6 @@
         botaoVoltar.addEventListener("click", voltarInicio);
     }
 
-    // ======================================================
-    // DESTAQUES DA PÁGINA INICIAL
-    // ======================================================
 
     function renderizarDestaques() {
         const elementoCursoDestaque = document.getElementById("cursoDestaque");
@@ -1175,9 +1118,6 @@
         }
     }
 
-    // ======================================================
-    // MODAIS - FUNÇÕES AUXILIARES
-    // ======================================================
 
     function campoModal(titulo, valor) {
         return `
@@ -1221,9 +1161,6 @@
         `;
     }
 
-    // ======================================================
-    // MODAL DE CURSO
-    // ======================================================
 
     function montarModalCurso(curso) {
         const gratuito = curso.valor === "Gratuito";
@@ -1313,9 +1250,6 @@
         `;
     }
 
-    // ======================================================
-    // MODAL DE VAGA
-    // ======================================================
 
     function montarModalVaga(vaga) {
         const empresa = valorSeguro(vaga.empresa);
@@ -1374,9 +1308,7 @@
             '</div>'
         ].join("");
     }
-    // ======================================================
-    // ABRIR MODAL
-    // ======================================================
+
 
     function abrirModal(tipo, id) {
         const lista = tipo === "curso" ? cursos : vagas;
@@ -1398,9 +1330,6 @@
         botaoFecharModal.focus();
     }
 
-    // ======================================================
-    // FECHAR MODAL
-    // ======================================================
 
     function fecharModal() {
         if (!modalOverlay.classList.contains("aberto")) return;
@@ -1415,9 +1344,6 @@
         }
     }
 
-    // ======================================================
-    // EVENTOS DOS MODAIS
-    // ======================================================
 
     document.addEventListener("click", evento => {
         const acionador = evento.target.closest("[data-abrir-modal]");
@@ -1447,9 +1373,6 @@
         }
     });
 
-    // ======================================================
-    // INICIALIZAÇÃO
-    // ======================================================
 
     renderizarDestaques();
 

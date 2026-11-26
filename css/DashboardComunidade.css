@@ -487,12 +487,6 @@
 }
 
 
-
-/* ==========================================================
-   CONTROLES INTERATIVOS DOS CARDS DA COMUNIDADE
-========================================================== */
-
-/* Remove a aparência padrão dos botões */
 .linkComunidade,
 .botaoGrupo,
 .botaoEvento,
@@ -507,7 +501,7 @@
     cursor: pointer;
 }
 
-/* Botões "Ver todos" */
+
 .linkComunidade {
     display: inline-flex;
     align-items: center;
@@ -536,7 +530,7 @@
     box-shadow: none;
 }
 
-/* Botões dos grupos */
+
 .botaoGrupo {
     display: flex;
     align-items: center;
@@ -561,7 +555,7 @@
     background-color: #3B0B3B;
 }
 
-/* Botão dos eventos */
+
 .botaoEvento {
     display: inline-flex;
     align-items: center;
@@ -584,7 +578,7 @@
     background-color: #3B0B3B;
 }
 
-/* Botão de criar publicação */
+
 .botaoHistoria {
     display: inline-flex;
     align-items: center;
@@ -607,7 +601,7 @@
     background-color: #3B0B3B;
 }
 
-/* Publicações clicáveis */
+
 .publicacao[role="button"] {
     width: 100%;
 
@@ -629,7 +623,7 @@
     outline-offset: 2px;
 }
 
-/* Evita bordas brancas no foco dos botões */
+
 .linkComunidade:focus-visible,
 .botaoGrupo:focus-visible,
 .botaoEvento:focus-visible,
@@ -637,7 +631,6 @@
     outline: 2px solid #903963;
     outline-offset: 3px;
 }
-
 
 
 @media (max-width: 1200px) {
@@ -910,7 +903,7 @@
     }
 }
 
-/* Paleta do Figma aplicada somente à DashboardComunidade */
+
 .dashboardComunidade {
     color: #3B0B3B;
 }

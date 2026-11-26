@@ -1,6 +1,4 @@
-/* ==========================================================
-   DASHBOARD OPORTUNIDADE - ELO D'ELAS
-   ========================================================== */
+
 
 .dashboardOportunidade {
     font-family: 'Poppins', sans-serif;
@@ -51,7 +49,6 @@ main.dashboardOportunidade {
     background: #FDF5FB;
 }
 
-/* RAMOS */
 
 .dashboardOportunidade .ramo {
     position: absolute;
@@ -77,7 +74,6 @@ main.dashboardOportunidade {
     z-index: 1;
 }
 
-/* CABEÇALHO */
 
 .cabecalhoOportunidade {
     position: relative;
@@ -106,7 +102,6 @@ main.dashboardOportunidade {
     font-weight: 500;
 }
 
-/* PESQUISA */
 
 .pesquisaListagem {
     display: flex;
@@ -138,7 +133,6 @@ main.dashboardOportunidade {
     font-size: 12px;
 }
 
-/* BANNER */
 
 .bannerOportunidade {
     position: relative;
@@ -209,7 +203,6 @@ main.dashboardOportunidade {
     transform: translateY(-50%) rotate(35deg);
 }
 
-/* ACESSOS RÁPIDOS */
 
 .secaoAcessos {
     position: relative;
@@ -287,7 +280,6 @@ main.dashboardOportunidade {
     color: #903963;
 }
 
-/* PAINÉIS INFERIORES */
 
 .painelInferior {
     position: relative;
@@ -349,7 +341,6 @@ main.dashboardOportunidade {
     color: #903963;
 }
 
-/* DESTAQUE DE CURSO */
 
 #cursoDestaque {
     display: flex;
@@ -425,7 +416,6 @@ main.dashboardOportunidade {
     font-weight: 500;
 }
 
-/* DESTAQUES DE VAGAS */
 
 .listaVagas {
     display: flex;
@@ -496,7 +486,6 @@ main.dashboardOportunidade {
     font-size: 14px;
 }
 
-/* PÁGINAS E LISTAGENS */
 
 .paginaOportunidade[hidden] {
     display: none !important;
@@ -554,7 +543,6 @@ main.dashboardOportunidade {
     background: #FFF;
 }
 
-/* FILTROS */
 
 .filtrosListagem {
     display: flex;
@@ -601,7 +589,6 @@ main.dashboardOportunidade {
     color: #FFF;
 }
 
-/* GRADE DE CARDS */
 
 .gradeOportunidades {
     display: grid;
@@ -756,7 +743,6 @@ main.dashboardOportunidade {
     font-weight: 600;
 }
 
-/* RESULTADOS POR TEMA */
 
 .secaoResultadosTema {
     grid-column: 1 / -1;
@@ -808,7 +794,6 @@ main.dashboardOportunidade {
     text-align: center;
 }
 
-/* MENSAGEM SEM RESULTADOS */
 
 .mensagemSemResultados {
     padding: 35px 15px;
@@ -821,7 +806,6 @@ main.dashboardOportunidade {
     display: none;
 }
 
-/* RESPONSIVIDADE */
 
 @media (max-width: 1200px) {
     .dashboardOportunidade .conteudoOportunidade {
@@ -1011,7 +995,7 @@ main.dashboardOportunidade {
     }
 }
 
-/* A navegação permanece na viewport; somente o painel da direita rola. */
+
 main.dashboardOportunidade {
     height: 100vh;
     min-height: 0;

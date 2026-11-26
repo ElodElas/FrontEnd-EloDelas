@@ -170,8 +170,7 @@ body {
 .conta a:hover,
 .esqueceu-senha:hover {
     text-decoration: underline;
-}
-
+}
 
 @media (max-width: 768px) {
     .pag-login {
@@ -200,8 +199,6 @@ body {
         width: 100%;
         min-height: auto;
         padding: 40px 20px;
-    }
+    }
 
- 
-    
 }

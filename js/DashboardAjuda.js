@@ -1,8 +1,4 @@
 
-// ==========================================
-// DASHBOARD AJUDA - ELO D'ELAS
-// Biblioteca de tutoriais, favoritos e finalizados
-// ==========================================
 
 (() => {
     "use strict";
@@ -11,9 +7,6 @@
     const STORAGE_COMPLETED = "eloAjuda_finalizados";
     const STORAGE_RATINGS = "eloAjuda_avaliacoes";
 
-    // ==========================================
-    // BANCO DE TUTORIAIS
-    // ==========================================
 
     const tutorials = [
 
@@ -625,9 +618,6 @@
 
     ];
 
-    // ==========================================
-    // CONFIGURAÇÃO DOS MODAIS
-    // ==========================================
 
     const root = document.getElementById("modalRoot");
 
@@ -667,9 +657,6 @@
     let currentOverlay = null;
     let lastFocusedElement = null;
 
-    // ==========================================
-    // NORMALIZAR TEXTO PARA PESQUISA
-    // ==========================================
 
     const normalizeText = value => String(value || "")
         .normalize("NFD")
@@ -677,9 +664,6 @@
         .toLocaleLowerCase("pt-BR")
         .trim();
 
-    // ==========================================
-    // SALVAR INFORMAÇÕES
-    // ==========================================
 
     const saveState = () => {
         localStorage.setItem(STORAGE_FAVORITES, JSON.stringify(favorites));
@@ -689,9 +673,6 @@
         updateDashboard();
     };
 
-    // ==========================================
-    // ATUALIZAR CONTADORES E CORAÇÕES
-    // ==========================================
 
     const updateDashboard = () => {
 
@@ -725,9 +706,6 @@
 
     const getTutorial = id => tutorials.find(item => item.id === id);
 
-    // ==========================================
-    // FECHAR MODAL
-    // ==========================================
 
     const closeModal = () => {
 
@@ -751,9 +729,6 @@
         }
     };
 
-    // ==========================================
-    // CRIAR E ABRIR MODAL
-    // ==========================================
 
     const createModal = ({ title, subtitle = "" }) => {
 
@@ -829,9 +804,6 @@
         return overlay.querySelector(".modalCorpo");
     };
 
-    // ==========================================
-    // FECHAR COM ESC
-    // ==========================================
 
     const handleEscape = event => {
 
@@ -851,9 +823,6 @@
 
     };
 
-    // ==========================================
-    // PROTEGER TEXTO INSERIDO NO HTML
-    // ==========================================
 
     const escapeHTML = value => String(value).replace(
         /[&<>"']/g,
@@ -866,9 +835,6 @@
         }[char])
     );
 
-    // ==========================================
-    // EXIBIR IMAGEM DO TUTORIAL
-    // ==========================================
 
     const renderTutorialImage = (item, className = "") => {
 
@@ -897,9 +863,6 @@
         `;
     };
 
-    // ==========================================
-    // CATEGORIAS DISPONÍVEIS
-    // ==========================================
 
     const getCategories = () => {
 
@@ -909,9 +872,6 @@
 
     };
 
-    // ==========================================
-    // FAVORITAR TUTORIAL
-    // ==========================================
 
     const toggleFavorite = id => {
 
@@ -933,9 +893,6 @@
         }
     };
 
-    // ==========================================
-    // FILTRAR E ATUALIZAR RESULTADOS
-    // ==========================================
 
     const updateListResults = (mode, body) => {
 
@@ -947,7 +904,6 @@
 
         let items = [...tutorials];
 
-        // Filtro de favoritos
 
         if (mode === "favorites") {
 
@@ -957,7 +913,6 @@
 
         }
 
-        // Filtro de finalizados
 
         if (mode === "completed") {
 
@@ -967,8 +922,6 @@
 
         }
 
-        // Filtro de conteúdos de bem-estar
-        // Mantido para compatibilidade com possíveis cards existentes.
 
         if (mode === "wellness") {
 
@@ -978,7 +931,6 @@
 
         }
 
-        // Filtro de categoria
 
         const categoryMatchers = {
             casa: /casa|alimentacao|organizacao/i,
@@ -996,7 +948,6 @@
             );
         }
 
-        // Pesquisa por texto
 
         const normalizedSearch = normalizeText(search);
 
@@ -1034,7 +985,6 @@
 
         }
 
-        // Atualizar contador
 
         const countElement = body.querySelector(".modalContagem");
 
@@ -1048,9 +998,6 @@
 
         }
 
-        // Atualizar somente a grade.
-        // Os campos de pesquisa e categoria permanecem no DOM,
-        // evitando que o campo perca o foco durante a digitação.
 
         const grid = body.querySelector(".modalGradeTutoriais");
 
@@ -1119,8 +1066,7 @@
 
         `;
 
-        // Os botões são recriados junto com a grade; associe a ação em cada
-        // novo elemento para que ela continue funcionando após busca e filtros.
+
         grid.querySelectorAll("[data-read]").forEach(button => {
             button.addEventListener("click", () => {
                 openArticle(button.dataset.read);
@@ -1135,9 +1081,6 @@
 
     };
 
-    // ==========================================
-    // MONTAR LISTA DE TUTORIAIS
-    // ==========================================
 
     const renderList = (mode, body) => {
 
@@ -1174,7 +1117,7 @@
         `;
 
         const searchInput = body.querySelector(".modalBusca");
-        // Pesquisa em tempo real sem recriar o input
+
 
         searchInput.addEventListener("input", () => {
 
@@ -1182,16 +1125,12 @@
 
         });
 
-        // Filtro de categoria
-
-        // Abrir tutorial e favoritar usando delegação de eventos
 
         updateListResults(mode, body);
 
     };
 
-    // Os cards são recriados a cada busca/filtro e os modais são substituídos
-    // na navegação. O root permanece montado durante todo esse fluxo.
+
     root.addEventListener("click", event => {
 
         const body = event.target.closest(".modalCorpo");
@@ -1213,9 +1152,6 @@
 
     });
 
-    // ==========================================
-    // ABRIR MODAIS DE LISTAGEM
-    // ==========================================
 
     const openList = mode => {
 
@@ -1257,9 +1193,6 @@
 
     };
 
-    // ==========================================
-    // ABRIR TUTORIAL INDIVIDUAL
-    // ==========================================
 
     const openArticle = id => {
 
@@ -1407,7 +1340,6 @@
 
         `;
 
-        // Botão de favoritos no artigo
 
         body.querySelector("[data-article-favorite]").addEventListener(
             "click",
@@ -1420,7 +1352,6 @@
             }
         );
 
-        // Botão de conclusão
 
         body.querySelector("[data-complete]").addEventListener(
             "click",
@@ -1493,13 +1424,9 @@
 
     };
 
-    // ==========================================
-    // EVENTOS DOS CARDS DA DASHBOARD
-    // ==========================================
 
     document.addEventListener("click", event => {
 
-        // Abrir listagens
 
         const listTrigger = event.target.closest("[data-open-list]");
 
@@ -1513,7 +1440,6 @@
 
         }
 
-        // Abrir tutorial diretamente
 
         const articleTrigger = event.target.closest("[data-open-tutorial]");
 
@@ -1527,7 +1453,6 @@
 
         }
 
-        // Favoritar pelos cards principais
 
         const favoriteTrigger = event.target.closest("[data-favorite]");
 
@@ -1541,9 +1466,6 @@
 
     });
 
-    // ==========================================
-    // ACESSIBILIDADE DOS CARDS DE RESUMO
-    // ==========================================
 
     document.querySelectorAll(
         ".cardTutoriaisFavoritos, .cardTutoriaisFinalizados"
@@ -1563,15 +1485,6 @@
 
     });
 
-    // ==========================================
-    // FILTROS SUPERIORES
-    // Removidos: as categorias agora são filtradas
-    // diretamente dentro dos modais de listagem.
-    // ==========================================
-
-    // ==========================================
-    // INICIALIZAÇÃO
-    // ==========================================
 
     updateDashboard();
 
